@@ -118,16 +118,16 @@ body {
 
 /* ========== 藏宝图页面样式 ========== */
 .treasure-map-page {
-    background: linear-gradient(180deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f64f59 100%);
     min-height: 100vh;
 }
 
 .treasure-header {
-    background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 50%, #4f46e5 100%);
+    background: linear-gradient(135deg, #ff6b6b 0%, #feca57 50%, #48dbfb 100%);
     color: white;
     padding: 2.5rem 2rem;
     text-align: center;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 -4px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 32px rgba(255, 107, 107, 0.5), inset 0 -4px 0 rgba(0, 0, 0, 0.2);
     border-bottom: none;
     position: relative;
     overflow: hidden;
@@ -140,8 +140,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 40%);
+    background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.25) 0%, transparent 40%);
     pointer-events: none;
 }
 
@@ -172,14 +172,14 @@ body {
 
 /* 藏宝图整体样式 */
 .treasure-map {
-    background: linear-gradient(145deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    background: linear-gradient(145deg, #2d1b69 0%, #11998e 50%, #38ef7d 100%);
     border-radius: 24px;
     padding: 2.5rem;
     position: relative;
     box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.4),
-        0 0 0 1px rgba(255, 255, 255, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        0 20px 60px rgba(102, 126, 234, 0.6),
+        0 0 0 4px rgba(255, 255, 255, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
     overflow: hidden;
 }
 
@@ -191,8 +191,8 @@ body {
     right: 0;
     bottom: 0;
     background-image: 
-        radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -219,25 +219,25 @@ body {
     text-align: center;
     margin-bottom: 2rem;
     padding: 1.5rem;
-    border-bottom: 1px solid rgba(99, 102, 241, 0.3);
-    background: linear-gradient(180deg, rgba(99, 102, 241, 0.1) 0%, transparent 100%);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
     border-radius: 12px;
 }
 
 .map-title-area h2 {
     font-size: 2rem;
-    color: #e0e7ff;
+    color: #ffffff;
     font-weight: 700;
     letter-spacing: 0.12em;
     margin-bottom: 0.6rem;
-    text-shadow: 0 2px 8px rgba(99, 102, 241, 0.4);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .map-title-area p {
     font-size: 1.05rem;
-    color: #a5b4fc;
+    color: #f8f9fa;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 /* SVG路线图 */
@@ -276,12 +276,12 @@ body {
 }
 
 .map-marker:hover .marker-bg {
-    fill: #6366f1;
-    filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.8));
+    fill: #ff6b6b;
+    filter: drop-shadow(0 0 25px rgba(255, 107, 107, 0.9));
 }
 
 .map-marker:hover .marker-inner {
-    fill: #818cf8;
+    fill: #feca57;
 }
 
 .map-marker:hover .marker-icon {
@@ -289,27 +289,27 @@ body {
 }
 
 .map-marker:hover .marker-name {
-    fill: #c7d2fe;
-    text-shadow: 0 0 10px rgba(199, 210, 254, 0.6);
+    fill: #ffffff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
 }
 
 .marker-bg {
-    fill: #4f46e5;
-    stroke: #818cf8;
-    stroke-width: 3;
+    fill: #667eea;
+    stroke: #ffffff;
+    stroke-width: 4;
     transition: all 0.4s ease;
-    filter: drop-shadow(0 4px 8px rgba(79, 70, 229, 0.5));
+    filter: drop-shadow(0 4px 8px rgba(102, 126, 234, 0.6));
 }
 
 .marker-inner {
-    fill: #6366f1;
+    fill: #764ba2;
     transition: all 0.4s ease;
 }
 
 .marker-icon {
     font-size: 18px;
     font-weight: 800;
-    fill: #e0e7ff;
+    fill: #ffffff;
     text-anchor: middle;
     dominant-baseline: middle;
     font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
@@ -319,7 +319,7 @@ body {
 .marker-name {
     font-size: 14px;
     font-weight: 600;
-    fill: #c7d2fe;
+    fill: #ffffff;
     text-anchor: middle;
     font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
     transition: all 0.4s ease;
@@ -374,24 +374,24 @@ body {
     gap: 1.5rem;
     margin-top: 2rem;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba(99, 102, 241, 0.3);
+    border-top: 2px solid rgba(255, 255, 255, 0.4);
 }
 
 .legend-item {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    color: #c7d2fe;
+    color: #ffffff;
     font-size: 0.95rem;
     padding: 0.5rem 1rem;
-    background: rgba(99, 102, 241, 0.1);
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 20px;
-    border: 1px solid rgba(99, 102, 241, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     transition: all 0.3s ease;
 }
 
 .legend-item:hover {
-    background: rgba(99, 102, 241, 0.2);
+    background: rgba(255, 255, 255, 0.35);
     transform: translateY(-2px);
 }
 
@@ -399,37 +399,37 @@ body {
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    background: #6366f1;
-    border: 2px solid #818cf8;
-    box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+    background: #667eea;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 15px rgba(102, 126, 234, 0.7);
 }
 
 .legend-icon.start {
-    background: #10b981;
-    border-color: #34d399;
-    box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+    background: #11998e;
+    border-color: #ffffff;
+    box-shadow: 0 0 15px rgba(17, 153, 142, 0.7);
 }
 
 .legend-icon.end {
-    background: #f59e0b;
-    border-color: #fbbf24;
-    box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+    background: #feca57;
+    border-color: #ffffff;
+    box-shadow: 0 0 15px rgba(254, 202, 87, 0.7);
 }
 
 /* ========== 地点详情页面样式 ========== */
 .location-page {
-    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f64f59 100%);
     min-height: 100vh;
 }
 
 .location-header {
-    background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 50%, #4f46e5 100%);
+    background: linear-gradient(135deg, #ff6b6b 0%, #feca57 50%, #48dbfb 100%);
     color: white;
     padding: 1.5rem 2rem;
     display: flex;
     align-items: center;
     gap: 2rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(255, 107, 107, 0.4);
     position: relative;
     overflow: hidden;
 }
@@ -441,8 +441,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.06) 0%, transparent 40%);
+    background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.15) 0%, transparent 40%);
     pointer-events: none;
 }
 
@@ -451,18 +451,18 @@ body {
     text-decoration: none;
     font-size: 1rem;
     padding: 0.6rem 1.2rem;
-    border: 2px solid rgba(255, 255, 255, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.6);
     border-radius: 30px;
     transition: all 0.3s ease;
     white-space: nowrap;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     position: relative;
     z-index: 1;
 }
 
 .back-btn:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.3);
     border-color: white;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -487,7 +487,7 @@ body {
     width: 100%;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 0 3px rgba(255, 255, 255, 0.3);
     margin-bottom: 2.5rem;
     position: relative;
 }
@@ -499,7 +499,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
     pointer-events: none;
     z-index: 1;
 }
@@ -516,26 +516,26 @@ body {
 }
 
 .location-info {
-    background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+    background: rgba(255, 255, 255, 0.95);
     padding: 2.5rem;
     border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(99, 102, 241, 0.1);
-    border: 1px solid rgba(99, 102, 241, 0.15);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2), 0 0 0 2px rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
 .location-info h2 {
     font-size: 1.8rem;
-    color: #e0e7ff;
+    color: #2d1b69;
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
-    border-bottom: 2px solid rgba(99, 102, 241, 0.3);
-    text-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+    border-bottom: 3px solid #667eea;
+    text-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
 }
 
 .location-info p {
     font-size: 1.1rem;
     line-height: 1.9;
-    color: #cbd5e1;
+    color: #4a4a6a;
 }
 
 /* ========== 响应式设计 ========== */
