@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>研学江西 - 寻宝地图</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="treasure-map-page">
+    <header class="treasure-header">
+        <h1>研学江西</h1>
+        <p class="header-subtitle">探索赣鄱大地 · 寻宝路线图</p>
+    </header>
+
+    <main class="treasure-map-container">
+        <div class="treasure-map" id="treasureMap">
+
+            <!-- 藏宝图装饰边框 -->
+            <div class="map-border"></div>
+
+            <!-- 地图内容区域 -->
+            <div class="map-content">
+
+                <!-- 标题区域 -->
+                <div class="map-title-area">
+                    <h2>研学之旅路线</h2>
+                    <p>跟随路线，探索江西的文化瑰宝</p>
+                </div>
+
+                <!-- 宝藏路线 -->
+                <svg viewBox="0 0 800 1000" class="route-svg" id="routeSvg">
+
+                    <!-- 路线路径（虚线） -->
+                    <path class="route-path" d="
+                        M 400, 900
+                        C 400, 850 350, 820 300, 800
+                        C 250, 780 220, 740 200, 700
+                        C 180, 660 180, 620 190, 580
+                        C 200, 540 230, 510 250, 470
+                        C 270, 430 260, 390 270, 350
+                        C 280, 310 320, 280 360, 250
+                        C 400, 220 440, 190 480, 160
+                        C 520, 130 550, 100 580, 70
+                    " />
+
+                    <!-- 地点标记 -->
+                    <!-- 1: 南昌西站（起点） -->
+                    <g class="map-marker start-point" data-location="nanchangxizhan">
+                        <circle cx="400" cy="900" r="30" class="marker-bg" />
+                        <circle cx="400" cy="900" r="22" class="marker-inner" />
+                        <text x="400" y="907" class="marker-icon">起</text>
+                        <text x="400" y="950" class="marker-name">南昌西站</text>
+                    </g>
+
+                    <!-- 2: 八一起义纪念馆 -->
+                    <g class="map-marker" data-location="bayiqiyijinianguan">
+                        <circle cx="300" cy="800" r="25" class="marker-bg" />
+                        <circle cx="300" cy="800" r="20" class="marker-inner" />
+                        <text x="300" y="807" class="marker-icon">军</text>
+                        <text x="300" y="840" class="marker-name">八一起义纪念馆</text>
+                    </g>
+
+                    <!-- 3: 滕王阁 -->
+                    <g class="map-marker" data-location="tengwangge">
+                        <circle cx="200" cy="700" r="25" class="marker-bg" />
+                        <circle cx="200" cy="700" r="20" class="marker-inner" />
+                        <text x="200" y="707" class="marker-icon">阁</text>
+                        <text x="200" y="740" class="marker-name">滕王阁</text>
+                    </g>
+
+                    <!-- 4: 万寿宫街区 -->
+                    <g class="map-marker" data-location="wanshougong">
+                        <circle cx="190" cy="580" r="25" class="marker-bg" />
+                        <circle cx="190" cy="580" r="20" class="marker-inner" />
+                        <text x="190" y="587" class="marker-icon">宫</text>
+                        <text x="190" y="620" class="marker-name">万寿宫街区</text>
+                    </g>
+
+                    <!-- 5: 海昏侯国遗址公园 -->
+                    <g class="map-marker" data-location="haihunhouguo">
+                        <circle cx="250" cy="470" r="25" class="marker-bg" />
+                        <circle cx="250" cy="470" r="20" class="marker-inner" />
+                        <text x="250" y="477" class="marker-icon">侯</text>
+                        <text x="250" y="510" class="marker-name">海昏侯国遗址</text>
+                    </g>
+
+                    <!-- 6: 庐山 -->
+                    <g class="map-marker" data-location="lushan">
+                        <circle cx="270" cy="350" r="25" class="marker-bg" />
+                        <circle cx="270" cy="350" r="20" class="marker-inner" />
+                        <text x="270" y="357" class="marker-icon">山</text>
+                        <text x="270" y="390" class="marker-name">庐山</text>
+                    </g>
+
+                    <!-- 7: 白鹿洞书院 -->
+                    <g class="map-marker" data-location="bailudongshuyuan">
+                        <circle cx="360" cy="250" r="25" class="marker-bg" />
+                        <circle cx="360" cy="250" r="20" class="marker-inner" />
+                        <text x="360" y="257" class="marker-icon">书</text>
+                        <text x="360" y="290" class="marker-name">白鹿洞书院</text>
+                    </g>
+
+                    <!-- 8: 景德镇古窑景区 -->
+                    <g class="map-marker" data-location="jingdezhen">
+                        <circle cx="480" cy="160" r="25" class="marker-bg" />
+                        <circle cx="480" cy="160" r="20" class="marker-inner" />
+                        <text x="480" y="167" class="marker-icon">瓷</text>
+                        <text x="480" y="200" class="marker-name">景德镇古窑</text>
+                    </g>
+
+                    <!-- 9: 陶溪川 -->
+                    <g class="map-marker" data-location="taoxichuan">
+                        <circle cx="550" cy="115" r="25" class="marker-bg" />
+                        <circle cx="550" cy="115" r="20" class="marker-inner" />
+                        <text x="550" y="122" class="marker-icon">溪</text>
+                        <text x="550" y="155" class="marker-name">陶溪川</text>
+                    </g>
+
+                    <!-- 10: 百陶会研学基地 -->
+                    <g class="map-marker" data-location="baitaohui">
+                        <circle cx="600" cy="85" r="25" class="marker-bg" />
+                        <circle cx="600" cy="85" r="20" class="marker-inner" />
+                        <text x="600" y="92" class="marker-icon">学</text>
+                        <text x="600" y="125" class="marker-name">百陶会研学基地</text>
+                    </g>
+
+                    <!-- 11: 婺女洲 -->
+                    <g class="map-marker" data-location="wunvzhou">
+                        <circle cx="630" cy="120" r="25" class="marker-bg" />
+                        <circle cx="630" cy="120" r="20" class="marker-inner" />
+                        <text x="630" y="127" class="marker-icon">洲</text>
+                        <text x="630" y="160" class="marker-name">婺女洲</text>
+                    </g>
+
+                    <!-- 12: 篁岭（终点） -->
+                    <g class="map-marker end-point" data-location="huangling">
+                        <circle cx="580" cy="70" r="35" class="marker-bg" />
+                        <circle cx="580" cy="70" r="27" class="marker-inner" />
+                        <text x="580" y="78" class="marker-icon">村</text>
+                        <text x="580" y="120" class="marker-name">篁岭</text>
+                    </g>
+
+                </svg>
+
+                <!-- 图例说明 -->
+                <div class="map-legend">
+                    <div class="legend-item">
+                        <span class="legend-icon start"></span>
+                        <span>起点 - 南昌西站</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-icon"></span>
+                        <span>途经景点</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-icon end"></span>
+                        <span>终点 - 篁岭</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
