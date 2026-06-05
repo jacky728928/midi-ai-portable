@@ -8,57 +8,496 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f5f5f5;
+    overflow-x: hidden;
 }
 
-/* 头部样式 */
-header {
-    background-color: #2c5f2d;
+/* ========== 欢迎页面样式 ========== */
+.welcome-page {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.welcome-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a472a 0%, #2c5f2d 50%, #3a7d44 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.8s ease-out;
+}
+
+.welcome-container.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.welcome-content {
+    text-align: center;
     color: white;
-    padding: 1rem 2rem;
+    z-index: 10;
 }
 
-header h1 {
+.welcome-title {
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: 0.1em;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-out;
+}
+
+.welcome-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease-out 0.3s backwards;
+}
+
+.welcome-hint {
+    position: relative;
+    font-size: 1.1rem;
+    opacity: 0.8;
+    animation: fadeInUp 1s ease-out 0.6s backwards;
+}
+
+.welcome-hint span {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.ripple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: ripple 2s infinite;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes ripple {
+    0% {
+        width: 100px;
+        height: 100px;
+        opacity: 0.5;
+    }
+    100% {
+        width: 200px;
+        height: 200px;
+        opacity: 0;
+    }
+}
+
+/* ========== 藏宝图页面样式 ========== */
+.treasure-map-page {
+    background: linear-gradient(180deg, #f5e6d3 0%, #e8d4b8 100%);
+    min-height: 100vh;
+}
+
+.treasure-header {
+    background: linear-gradient(135deg, #8B4513 0%, #A0522D 50%, #CD853F 100%);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(139, 69, 19, 0.4);
+    border-bottom: 4px solid #654321;
+}
+
+.treasure-header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1em;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.header-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    font-weight: 400;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.treasure-map-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* 藏宝图整体样式 */
+.treasure-map {
+    background: linear-gradient(145deg, #f4e4c1 0%, #e8d4a8 100%);
+    border-radius: 8px;
+    padding: 2rem;
+    position: relative;
+    box-shadow:
+        0 0 0 4px #8B4513,
+        0 0 0 8px #654321,
+        0 0 0 12px #8B4513,
+        0 10px 40px rgba(139, 69, 19, 0.3);
+}
+
+.map-border {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border: 3px dashed #8B4513;
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+.map-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* 地图标题区域 */
+.map-title-area {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-bottom: 2px solid #8B4513;
+}
+
+.map-title-area h2 {
+    font-size: 1.8rem;
+    color: #654321;
+    font-weight: 700;
+    letter-spacing: 0.1em;
     margin-bottom: 0.5rem;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
+.map-title-area p {
+    font-size: 1rem;
+    color: #8B4513;
+    font-style: italic;
 }
 
-nav a {
+/* SVG路线图 */
+.route-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 路线路径 */
+.route-path {
+    fill: none;
+    stroke: #8B4513;
+    stroke-width: 5;
+    stroke-dasharray: 20, 12;
+    stroke-linecap: round;
+    animation: dash 30s linear infinite;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: -1000;
+    }
+}
+
+/* 地点标记 */
+.map-marker {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.map-marker:hover {
+    transform: scale(1.15);
+}
+
+.map-marker:hover .marker-bg {
+    fill: #CD853F;
+}
+
+.map-marker:hover .marker-inner {
+    fill: #FFD700;
+}
+
+.marker-bg {
+    fill: #D2691E;
+    stroke: #8B4513;
+    stroke-width: 3;
+    transition: all 0.3s ease;
+}
+
+.marker-inner {
+    fill: #F4A460;
+    transition: all 0.3s ease;
+}
+
+.marker-icon {
+    font-size: 18px;
+    font-weight: bold;
+    fill: #654321;
+    text-anchor: middle;
+    dominant-baseline: middle;
+    font-family: "SimHei", "Microsoft YaHei", sans-serif;
+}
+
+.marker-name {
+    font-size: 14px;
+    font-weight: 600;
+    fill: #654321;
+    text-anchor: middle;
+    font-family: "SimSun", "Microsoft YaHei", sans-serif;
+}
+
+/* 起点标记样式 */
+.map-marker.start-point .marker-bg {
+    fill: #228B22;
+    stroke: #006400;
+}
+
+.map-marker.start-point .marker-inner {
+    fill: #90EE90;
+}
+
+.map-marker.start-point .marker-icon {
+    fill: #006400;
+}
+
+/* 终点标记样式 */
+.map-marker.end-point .marker-bg {
+    fill: #FF4500;
+    stroke: #8B0000;
+}
+
+.map-marker.end-point .marker-inner {
+    fill: #FFD700;
+}
+
+.map-marker.end-point .marker-icon {
+    fill: #8B0000;
+    font-size: 20px;
+}
+
+/* 图例 */
+.map-legend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 2px solid #8B4513;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #654321;
+    font-size: 0.9rem;
+}
+
+.legend-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #D2691E;
+    border: 2px solid #8B4513;
+}
+
+.legend-icon.start {
+    background: #228B22;
+    border-color: #006400;
+}
+
+.legend-icon.end {
+    background: #FF4500;
+    border-color: #8B0000;
+}
+
+/* ========== 地点详情页面样式 ========== */
+.location-page {
+    background: #f5f7fa;
+    min-height: 100vh;
+}
+
+.location-header {
+    background: linear-gradient(135deg, #1a472a 0%, #2c5f2d 100%);
+    color: white;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.back-btn {
     color: white;
     text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
-nav a:hover {
-    text-decoration: underline;
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: white;
 }
 
-/* 主体内容样式 */
-main {
-    padding: 2rem;
+.location-header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.location-content {
     max-width: 1200px;
     margin: 0 auto;
-}
-
-section {
-    background-color: white;
     padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* 页脚样式 */
-footer {
-    background-color: #2c5f2d;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
+.location-image {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    margin-bottom: 2rem;
+}
+
+.location-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.location-image:hover img {
+    transform: scale(1.02);
+}
+
+.location-info {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.location-info h2 {
+    font-size: 1.8rem;
+    color: #1a472a;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #2c5f2d;
+}
+
+.location-info p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* ========== 响应式设计 ========== */
+@media (max-width: 768px) {
+    .welcome-title {
+        font-size: 3rem;
+    }
+
+    .welcome-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .treasure-header h1 {
+        font-size: 2rem;
+    }
+
+    .treasure-map {
+        padding: 1rem;
+    }
+
+    .map-title-area h2 {
+        font-size: 1.4rem;
+    }
+
+    .map-legend {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    .location-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .location-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .location-info {
+        padding: 1.5rem;
+    }
+
+    .location-info h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-title {
+        font-size: 2.5rem;
+    }
+
+    .welcome-subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .welcome-hint span {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .treasure-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .map-title-area p {
+        font-size: 0.9rem;
+    }
+
+    .marker-icon {
+        font-size: 14px;
+    }
+
+    .marker-name {
+        font-size: 12px;
+    }
 }

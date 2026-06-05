@@ -3,5 +3,47 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('研学江西网站已加载');
 
-    // 在这里添加您的JavaScript代码
+    // ========== 欢迎页面交互逻辑 ==========
+    const welcomeScreen = document.getElementById('welcomeScreen');
+    if (welcomeScreen) {
+        welcomeScreen.addEventListener('click', function() {
+            // 添加淡出动画
+            welcomeScreen.classList.add('fade-out');
+
+            // 等待动画完成后跳转
+            setTimeout(function() {
+                window.location.href = 'map.html';
+            }, 800);
+        });
+    }
+
+    // ========== 藏宝图地图页面交互逻辑 ==========
+    const mapMarkers = document.querySelectorAll('.map-marker');
+    if (mapMarkers.length > 0) {
+        mapMarkers.forEach(function(marker) {
+            marker.addEventListener('click', function() {
+                const locationId = this.getAttribute('data-location');
+                if (locationId) {
+                    // 添加点击动画效果
+                    this.style.transform = 'scale(1.2)';
+                    this.style.opacity = '0.8';
+
+                    setTimeout(() => {
+                        window.location.href = 'locations/' + locationId + '.html';
+                    }, 150);
+                }
+            });
+        });
+    }
+
+    // ========== 地点详情页面返回功能 ==========
+    const backButtons = document.querySelectorAll('.back-btn');
+    if (backButtons.length > 0) {
+        backButtons.forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                history.back();
+            });
+        });
+    }
 });
