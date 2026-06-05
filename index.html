@@ -2,18 +2,20 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>北京八中2028届九班 - 班级介绍</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
             font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
             overflow: hidden;
+            touch-action: manipulation;
         }
 
         .slideshow {
@@ -33,8 +35,10 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 40px;
+            padding: 20px;
+            padding-bottom: 80px;
             color: white;
+            overflow-y: auto;
         }
 
         .slide.active {
@@ -42,30 +46,33 @@
         }
 
         .slide h1 {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
             background: linear-gradient(90deg, #f39c12, #e74c3c);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-align: center;
         }
 
         .slide h2 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
             color: #ecf0f1;
+            text-align: center;
         }
 
         .slide h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
             color: #bdc3c7;
+            text-align: center;
         }
 
         .slide p {
-            font-size: 1.2rem;
+            font-size: 1rem;
             line-height: 1.8;
             color: #95a5a6;
             max-width: 800px;
@@ -73,21 +80,23 @@
         }
 
         .slide .subtitle {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             color: #f39c12;
             margin-top: 10px;
         }
 
         .placeholder-image {
-            width: 400px;
-            height: 300px;
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            aspect-ratio: 4/3;
             background: linear-gradient(145deg, #34495e, #2c3e50);
             border-radius: 12px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin: 30px 0;
+            margin: 20px 0;
             border: 3px dashed #7f8c8d;
             position: relative;
             overflow: hidden;
@@ -116,43 +125,44 @@
         }
 
         .placeholder-image .text {
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             color: #95a5a6;
             text-align: center;
-            padding: 20px;
+            padding: 15px;
         }
 
         .class-info {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            max-width: 900px;
-            margin-top: 30px;
+            gap: 15px;
+            max-width: 600px;
+            width: 100%;
+            margin-top: 20px;
         }
 
         .info-card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border-radius: 12px;
-            padding: 30px;
+            padding: 20px;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .info-card .icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
             color: #f39c12;
         }
 
         .info-card .label {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: #95a5a6;
             margin-bottom: 5px;
         }
 
         .info-card .value {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: #ecf0f1;
         }
@@ -160,15 +170,16 @@
         .features {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            max-width: 1000px;
-            margin-top: 40px;
+            gap: 15px;
+            max-width: 800px;
+            width: 100%;
+            margin-top: 25px;
         }
 
         .feature-card {
             background: rgba(255, 255, 255, 0.08);
             border-radius: 12px;
-            padding: 30px;
+            padding: 20px 10px;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.15);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -179,77 +190,82 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
+        .feature-card:active {
+            transform: scale(0.98);
+        }
+
         .feature-card .icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+            font-size: 2rem;
+            margin-bottom: 10px;
             color: #3498db;
         }
 
         .feature-card h4 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
+            font-size: 1rem;
+            margin-bottom: 8px;
             color: #ecf0f1;
         }
 
         .feature-card p {
-            font-size: 1rem;
+            font-size: 0.85rem;
             color: #95a5a6;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         .member-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            max-width: 1000px;
-            margin-top: 30px;
+            gap: 12px;
+            max-width: 700px;
+            width: 100%;
+            margin-top: 20px;
         }
 
         .member-card {
             background: rgba(255, 255, 255, 0.08);
             border-radius: 12px;
-            padding: 20px;
+            padding: 15px 8px;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         .member-avatar {
-            width: 80px;
-            height: 80px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             background: linear-gradient(145deg, #3498db, #2980b9);
-            margin: 0 auto 15px;
+            margin: 0 auto 10px;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: white;
         }
 
         .member-card .name {
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             color: #ecf0f1;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
 
         .member-card .role {
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             color: #95a5a6;
         }
 
         .nav-dots {
             position: fixed;
-            bottom: 30px;
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            gap: 15px;
+            gap: 10px;
             z-index: 100;
         }
 
         .nav-dot {
-            width: 15px;
-            height: 15px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.3);
             cursor: pointer;
@@ -258,8 +274,8 @@
         }
 
         .nav-dot.active {
-            width: 40px;
-            border-radius: 20px;
+            width: 30px;
+            border-radius: 15px;
             background: #f39c12;
             border-color: #f39c12;
         }
@@ -271,89 +287,157 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
-            padding: 0 30px;
+            padding: 0 15px;
             z-index: 100;
+            pointer-events: none;
         }
 
         .nav-arrow {
-            width: 50px;
-            height: 50px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.15);
             border: 2px solid rgba(255, 255, 255, 0.3);
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             display: flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
             transition: all 0.3s ease;
+            pointer-events: auto;
+            -webkit-user-select: none;
+            user-select: none;
         }
 
         .nav-arrow:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .nav-arrow:active {
+            transform: scale(0.95);
+            background: rgba(255, 255, 255, 0.3);
         }
 
         .slide-number {
             position: fixed;
-            top: 30px;
-            right: 30px;
-            font-size: 1rem;
+            top: 15px;
+            right: 15px;
+            font-size: 0.85rem;
             color: rgba(255, 255, 255, 0.5);
             z-index: 100;
         }
 
+        .swipe-hint {
+            position: fixed;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.4);
+            z-index: 100;
+        }
+
         @media (max-width: 768px) {
+            .slide {
+                padding: 15px;
+                padding-bottom: 70px;
+            }
+
             .slide h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             .slide h2 {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
 
             .slide h3 {
-                font-size: 1.3rem;
+                font-size: 1.1rem;
+            }
+
+            .slide p {
+                font-size: 0.9rem;
             }
 
             .placeholder-image {
-                width: 100%;
-                height: 200px;
+                max-width: 100%;
+                height: auto;
+                aspect-ratio: 16/9;
             }
 
             .class-info {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 12px;
             }
 
             .features {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 12px;
             }
 
             .member-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
+                gap: 10px;
+            }
+
+            .member-avatar {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .member-card .name {
+                font-size: 0.8rem;
+            }
+
+            .member-card .role {
+                font-size: 0.7rem;
             }
 
             .nav-arrows {
-                padding: 0 15px;
+                padding: 0 10px;
             }
 
             .nav-arrow {
-                width: 40px;
-                height: 40px;
+                width: 38px;
+                height: 38px;
+                font-size: 1.1rem;
+            }
+
+            .nav-dots {
+                bottom: 15px;
+                gap: 8px;
+            }
+
+            .nav-dot {
+                width: 10px;
+                height: 10px;
+            }
+
+            .nav-dot.active {
+                width: 24px;
+                border-radius: 12px;
+            }
+
+            .swipe-hint {
+                display: block;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .swipe-hint {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    <div class="slideshow">
+    <div class="slideshow" id="slideshow">
         <div class="slide active">
             <h1>北京八中</h1>
             <h2>2028届九班</h2>
-            <p class="subtitle">团结奋进 · 追求卓越</p>
+            <p class="subtitle">团结奋进 · 文理兼备 · 追求卓越</p>
             <div class="placeholder-image">
                 <div class="text">🎓 班级主视觉图片占位符<br/>北京八中校门/校徽</div>
             </div>
@@ -362,7 +446,7 @@
         <div class="slide">
             <h2>班级简介</h2>
             <p>北京八中2028届九班是一个充满活力、团结友爱的集体。我们由45名优秀学子组成，在班主任老师的带领下，秉承"勤奋、求实、创新"的校训，努力学习，全面发展。</p>
-            <p>我们班以"团结奋进，追求卓越"为班级口号，在学习、体育、文艺等各个方面都取得了优异成绩，是学校中的优秀班级代表。</p>
+            <p>我们是一个文科班但文理兼备，在文科素养与理科思维并重培养。班级以"团结奋进，追求卓越"为口号，在学习、体育、文艺等各个方面都取得了优异成绩。</p>
             <div class="class-info">
                 <div class="info-card">
                     <div class="icon">👨‍👩‍👧‍👦</div>
@@ -374,6 +458,16 @@
                     <div class="label">荣誉称号</div>
                     <div class="value">优秀班级</div>
                 </div>
+                <div class="info-card">
+                    <div class="icon">📚</div>
+                    <div class="label">班级特色</div>
+                    <div class="value">文理兼备</div>
+                </div>
+                <div class="info-card">
+                    <div class="icon">🎯</div>
+                    <div class="label">发展理念</div>
+                    <div class="value">全面发展</div>
+                </div>
             </div>
         </div>
 
@@ -383,7 +477,7 @@
                 <div class="feature-card">
                     <div class="icon">📚</div>
                     <h4>学风浓厚</h4>
-                    <p>班级学习氛围浓厚，同学们互帮互助，形成了良好的学习风气，多次获得年级学习成绩优秀奖。</p>
+                    <p>班级学习氛围浓厚，文理学科并重，同学们互帮互助，多次获得年级学习成绩优秀奖。</p>
                 </div>
                 <div class="feature-card">
                     <div class="icon">⚽</div>
@@ -404,42 +498,42 @@
                 <div class="member-card">
                     <div class="member-avatar">👨‍🏫</div>
                     <div class="name">班主任</div>
-                    <div class="role">张老师</div>
+                    <div class="role">Teacher A</div>
                 </div>
                 <div class="member-card">
                     <div class="member-avatar">🎖️</div>
                     <div class="name">班长</div>
-                    <div class="role">李明</div>
+                    <div class="role">Student A</div>
                 </div>
                 <div class="member-card">
                     <div class="member-avatar">📝</div>
                     <div class="name">学习委员</div>
-                    <div class="role">王芳</div>
+                    <div class="role">Student B</div>
                 </div>
                 <div class="member-card">
                     <div class="member-avatar">⚽</div>
                     <div class="name">体育委员</div>
-                    <div class="role">张伟</div>
+                    <div class="role">Student C</div>
                 </div>
                 <div class="member-card">
                     <div class="member-avatar">🎨</div>
                     <div class="name">文艺委员</div>
-                    <div class="role">刘娜</div>
+                    <div class="role">Student D</div>
                 </div>
                 <div class="member-card">
                     <div class="member-avatar">📢</div>
                     <div class="name">宣传委员</div>
-                    <div class="role">陈强</div>
+                    <div class="role">Student E</div>
                 </div>
                 <div class="member-card">
                     <div class="member-avatar">🧹</div>
                     <div class="name">卫生委员</div>
-                    <div class="role">赵静</div>
+                    <div class="role">Student F</div>
                 </div>
                 <div class="member-card">
                     <div class="member-avatar">🤝</div>
                     <div class="name">组织委员</div>
-                    <div class="role">孙磊</div>
+                    <div class="role">Student G</div>
                 </div>
             </div>
         </div>
@@ -476,8 +570,8 @@
         <div class="slide">
             <h2>展望未来</h2>
             <p>作为北京八中2028届九班的一员，我们将继续秉持校训精神，努力学习，全面发展，为实现自己的梦想而不懈奋斗。</p>
-            <p>我们相信，在老师的教导和同学们的共同努力下，九班的明天一定会更加辉煌！</p>
-            <div class="placeholder-image" style="margin-top: 40px;">
+            <p>我们相信，在老师的教导和同学们的共同努力下，文理兼备的九班明天一定会更加辉煌！</p>
+            <div class="placeholder-image" style="margin-top: 25px;">
                 <div class="text">🌟 未来展望图片占位符<br/>梦想/目标/希望主题</div>
             </div>
         </div>
@@ -485,8 +579,8 @@
         <div class="slide">
             <h1>谢谢观看</h1>
             <h3>北京八中2028届九班</h3>
-            <p style="margin-top: 30px;">联系方式：<span style="color: #f39c12;">bjbz_2028_9ban@school.edu.cn</span></p>
-            <div class="placeholder-image" style="margin-top: 40px;">
+            <p style="margin-top: 20px;">联系方式：<span style="color: #f39c12;">bjbz_2028_9ban@school.edu.cn</span></p>
+            <div class="placeholder-image" style="margin-top: 25px;">
                 <div class="text">✨ 班级二维码/联系方式占位符</div>
             </div>
         </div>
@@ -501,14 +595,19 @@
 
     <div class="nav-dots" id="navDots"></div>
 
+    <div class="swipe-hint">← 左右滑动切换 →</div>
+
     <script>
         const slides = document.querySelectorAll('.slide');
         const navDots = document.getElementById('navDots');
         const slideNumber = document.getElementById('slideNumber');
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
+        const slideshow = document.getElementById('slideshow');
 
         let currentSlide = 0;
+        let touchStartX = 0;
+        let touchEndX = 0;
 
         function createNavDots() {
             slides.forEach((_, index) => {
@@ -532,19 +631,19 @@
         function goToSlide(index) {
             slides[currentSlide].classList.remove('active');
             currentSlide = index;
+            if (currentSlide < 0) currentSlide = slides.length - 1;
+            if (currentSlide >= slides.length) currentSlide = 0;
             slides[currentSlide].classList.add('active');
             updateNavDots();
             updateSlideNumber();
         }
 
         function nextSlide() {
-            const nextIndex = (currentSlide + 1) % slides.length;
-            goToSlide(nextIndex);
+            goToSlide(currentSlide + 1);
         }
 
         function prevSlide() {
-            const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
-            goToSlide(prevIndex);
+            goToSlide(currentSlide - 1);
         }
 
         createNavDots();
@@ -558,6 +657,27 @@
             if (e.key === 'ArrowLeft') prevSlide();
             if (e.key === 'ArrowRight') nextSlide();
         });
+
+        slideshow.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        slideshow.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+        }
     </script>
 </body>
 </html>
