@@ -5,21 +5,526 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>八一起义纪念馆 - 研学江西</title>
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* 革命主题展板样式 */
+        .exhibition-board {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .board-header {
+            text-align: center;
+            padding: 35px;
+            background: linear-gradient(135deg, #8B0000 0%, #B22222 50%, #DC143C 100%);
+            color: #FFFAF0;
+            border-radius: 12px 12px 0 0;
+            margin-bottom: 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .board-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 40%);
+            pointer-events: none;
+        }
+        
+        .board-header h1 {
+            font-size: 2.6em;
+            margin: 0 0 10px 0;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .board-header .subtitle {
+            font-size: 1.25em;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .board-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            background: #FFF5F5;
+        }
+        
+        .board-section {
+            padding: 25px;
+            border: 1px solid #8B0000;
+            background: linear-gradient(180deg, #FFFAF0 0%, #FFF5F5 100%);
+        }
+        
+        .section-one {
+            grid-column: 1;
+            grid-row: 1;
+            border-right: 2px solid #8B0000;
+        }
+        
+        .section-two {
+            grid-column: 2;
+            grid-row: 1;
+        }
+        
+        .section-three {
+            grid-column: 1;
+            grid-row: 2;
+            border-right: 2px solid #8B0000;
+        }
+        
+        .section-four {
+            grid-column: 2;
+            grid-row: 2;
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #8B0000;
+        }
+        
+        .section-title .icon {
+            font-size: 2em;
+            color: #8B0000;
+        }
+        
+        .section-title h2 {
+            font-size: 1.6em;
+            color: #8B0000;
+            margin: 0;
+        }
+        
+        .section-title h3 {
+            font-size: 1.05em;
+            color: #B22222;
+            margin: 5px 0 0 0;
+            font-weight: normal;
+        }
+        
+        .content-box {
+            background: rgba(255,255,255,0.85);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #DC143C;
+        }
+        
+        .content-box h4 {
+            color: #8B0000;
+            font-size: 1.1em;
+            margin: 0 0 10px 0;
+        }
+        
+        .content-box p {
+            color: #4A0000;
+            line-height: 1.8;
+            margin: 0;
+            text-align: justify;
+        }
+        
+        .highlight-text {
+            color: #DC143C;
+            font-weight: bold;
+        }
+        
+        .famous-quote {
+            background: linear-gradient(135deg, #FFFAF0 0%, #FFE4E1 100%);
+            padding: 20px;
+            text-align: center;
+            font-size: 1.3em;
+            color: #8B0000;
+            font-style: italic;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px dashed #DC143C;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #8B0000 0%, #DC143C 100%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+            padding-left: 25px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: #DC143C;
+            border-radius: 50%;
+            border: 2px solid #FFFAF0;
+        }
+        
+        .timeline-item h4 {
+            color: #8B0000;
+            margin: 0 0 8px 0;
+            font-size: 1.05em;
+        }
+        
+        .timeline-item p {
+            color: #4A0000;
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .stat-item {
+            background: rgba(139,0,0,0.1);
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            border: 1px solid #B22222;
+        }
+        
+        .stat-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #8B0000;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            color: #B22222;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .feature-list li {
+            padding: 10px 0 10px 30px;
+            position: relative;
+            color: #4A0000;
+            border-bottom: 1px dashed #DC143C;
+        }
+        
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-list li::before {
+            content: '★';
+            position: absolute;
+            left: 0;
+            color: #DC143C;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .tag {
+            background: linear-gradient(135deg, #8B0000 0%, #DC143C 100%);
+            color: #FFFAF0;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        
+        .quote-section {
+            background: linear-gradient(135deg, #8B0000 0%, #B22222 100%);
+            color: #FFFAF0;
+            padding: 25px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .quote-section h3 {
+            font-size: 1.3em;
+            margin: 0 0 15px 0;
+        }
+        
+        .quote-section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin: 0;
+        }
+        
+        .side-quotes {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .side-quote {
+            background: rgba(139,0,0,0.1);
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 0.95em;
+            color: #8B0000;
+            text-align: center;
+            border: 1px dashed #DC143C;
+        }
+        
+        .board-footer {
+            background: linear-gradient(135deg, #8B0000 0%, #DC143C 100%);
+            color: #FFFAF0;
+            text-align: center;
+            padding: 20px;
+            border-radius: 0 0 12px 12px;
+        }
+        
+        .研学小字 {
+            background: #FFFAF0;
+            border: 1px solid #DC143C;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            color: #8B0000;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        
+        .研学点睛 {
+            background: linear-gradient(90deg, #8B0000 0%, #DC143C 100%);
+            color: #FFFAF0;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 15px;
+        }
+        
+        /* 响应式适配 */
+        @media (max-width: 900px) {
+            .board-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-one, .section-two, .section-three, .section-four {
+                grid-column: 1;
+                grid-row: auto;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body class="location-page">
     <header class="location-header">
         <a href="../map.html" class="back-btn">← 返回地图</a>
-        <h1>八一起义纪念馆</h1>
     </header>
 
     <main class="location-content">
-        <div class="location-image">
-            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Nanchang%20August%201st%20Uprising%20Memorial%20Museum%20red%20building%20historical%20site&image_size=landscape_16_9" alt="八一起义纪念馆">
+        <div class="exhibition-board">
+            <!-- 展板标题 -->
+            <div class="board-header">
+                <h1>暗夜举旗·星火建军</h1>
+                <div class="subtitle">从南昌城头到井冈会师</div>
+            </div>
+
+            <!-- 四板块网格布局 -->
+            <div class="board-grid">
+                
+                <!-- 板块一：血色浩劫·大革命倾覆 -->
+                <div class="board-section section-one">
+                    <div class="section-title">
+                        <span class="icon">📋</span>
+                        <div>
+                            <h2>血色浩劫·大革命倾覆</h2>
+                            <h3>白色恐怖催生武装抗争</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="content-box">
+                        <h4>① 血腥屠杀</h4>
+                        <p>1927年3月至1928年上半年，<span class="highlight-text">31万余革命者遇害</span>，共产党员由5.8万人锐减至1万余人。四一二、七一五政变相继爆发，大革命惨遭失败，中国革命陷入最低谷。</p>
+                    </div>
+                    
+                    <div class="content-box">
+                        <h4>② 历史抉择</h4>
+                        <p>血的教训使共产党人深刻认识到：<span class="highlight-text">枪杆子里出政权</span>！必须建立自己的武装力量，南昌起义的火种由此点燃。</p>
+                    </div>
+                    
+                    <div class="famous-quote">
+                        "枪杆子里面出政权"
+                    </div>
+                    
+                    <div class="content-box">
+                        <p>白色恐怖笼罩神州，悲歌四起，但共产党人没有被吓倒，擦干身上的血迹，掩埋好同伴的尸首，继续战斗！</p>
+                    </div>
+                    
+                    <div class="研学小字">
+                        💡 这是中国共产党独立领导武装斗争的开端
+                    </div>
+                </div>
+
+                <!-- 板块二：密筹举义·各方暗聚南昌 -->
+                <div class="board-section section-two">
+                    <div class="section-title">
+                        <span class="icon">⭐</span>
+                        <div>
+                            <h2>密筹举义·暗聚洪城</h2>
+                            <h3>英雄集结，秘密策划</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="content-box">
+                        <h4>① 一代英豪</h4>
+                        <p><span class="highlight-text">周恩来、贺龙、叶挺、朱德、刘伯承</span>等革命先驱秘密汇聚南昌，组建前敌委员会，周恩来任前委书记，精心筹划起义大计。</p>
+                    </div>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h4>7月下旬</h4>
+                            <p>起义部队陆续向南昌集中，各路人马秘密集结洪城</p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h4>7月27日</h4>
+                            <p>中共前敌委员会在南昌江西大旅社成立</p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h4>7月31日</h4>
+                            <p>起义作战方案最终敲定，箭在弦上</p>
+                        </div>
+                    </div>
+                    
+                    <div class="研学点睛">
+                        🚩 英雄聚首，风云际会，南昌城正孕育着惊天动地的大事！
+                    </div>
+                </div>
+
+                <!-- 板块三：打响第一枪·城头惊雷破暗夜 -->
+                <div class="board-section section-three">
+                    <div class="section-title">
+                        <span class="icon">🔫</span>
+                        <div>
+                            <h2>打响第一枪·城头惊雷</h2>
+                            <h3>八一建军，永载史册</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="content-box">
+                        <h4>① 1927年8月1日 凌晨2时</h4>
+                        <p>南昌城头一声枪响，划破暗夜！在周恩来、贺龙、叶挺、朱德、刘伯承的指挥下，起义军经过<span class="highlight-text">4小时激战</span>，成功占领南昌城！</p>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value">8月1日</div>
+                            <div class="stat-label">起义纪念日</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">4小时</div>
+                            <div class="stat-label">战斗时长</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">5位</div>
+                            <div class="stat-label">主要指挥</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">2万+</div>
+                            <div class="stat-label">起义将士</div>
+                        </div>
+                    </div>
+                    
+                    <ul class="feature-list" style="margin-top: 20px;">
+                        <li><strong>历史定位：</strong>中国共产党独立领导武装斗争的开始</li>
+                        <li><strong>战略意义：</strong>创建人民军队的伟大开端</li>
+                        <li><strong>精神传承：</strong>八一精神由此诞生，永放光芒</li>
+                        <li><strong>永恒纪念：</strong>8月1日成为中国人民解放军建军节</li>
+                    </ul>
+                    
+                    <div class="tags">
+                        <span class="tag">南昌起义</span>
+                        <span class="tag">八一起义</span>
+                        <span class="tag">人民军队诞生</span>
+                    </div>
+                </div>
+
+                <!-- 板块四：英名录垂·井冈会师开新篇 -->
+                <div class="board-section section-four">
+                    <div class="section-title">
+                        <span class="icon">🏔️</span>
+                        <div>
+                            <h2>英名录垂·井冈会师</h2>
+                            <h3>两万壮士，星火燎原</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="quote-section">
+                        <h3>英烈不朽</h3>
+                        <p>2万余人参加南昌起义，在册仅千余人。其中：19位省部级干部、6位开国少将、4位上将、6位元帅、6位大将。<span class="highlight-text">4742名烈士</span>在建国前英勇牺牲！</p>
+                    </div>
+                    
+                    <div class="quote-section">
+                        <h3>⭐ 星火燎原</h3>
+                        <p>
+                            起义后部队南下转战，一部分到海陆丰与农军会合，<br>
+                            另一部分由朱德、陈毅率领，经<span class="highlight-text">赣南三整</span>，<br>
+                            最终奔赴井冈山，与毛泽东领导的秋收起义部队会师！
+                        </p>
+                    </div>
+                    
+                    <div class="side-quotes">
+                        <div class="side-quote">🔥 朱毛会师，中国工农红军第四军成立</div>
+                        <div class="side-quote">🚀 第一支主力红军诞生，井冈山根据地稳固</div>
+                        <div class="side-quote">⭐ 星星之火，可以燎原！</div>
+                    </div>
+                    
+                    <div class="quote-section">
+                        <h3>🎓 八一精神</h3>
+                        <p>
+                            <strong>坚定信念</strong> · <strong>百折不挠</strong><br>
+                            <strong>勇于开拓</strong> · <strong>敢为人先</strong>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 展板底部装饰 -->
+            <div class="board-footer">
+                <p style="margin: 0; font-size: 1.1em;">
+                    🚀 研学江西 · 传承红色基因 · 弘扬八一精神
+                </p>
+            </div>
         </div>
-        <section class="location-info">
-            <h2>关于八一起义纪念馆</h2>
-            <p>内容待补充...</p>
-        </section>
     </main>
 
     <script src="../js/main.js"></script>
