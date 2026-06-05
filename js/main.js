@@ -21,16 +21,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const mapMarkers = document.querySelectorAll('.map-marker');
     if (mapMarkers.length > 0) {
         mapMarkers.forEach(function(marker) {
+            // 确保所有标记点重置为初始状态
+            marker.style.transform = '';
+            marker.style.opacity = '';
+            
             marker.addEventListener('click', function() {
                 const locationId = this.getAttribute('data-location');
                 if (locationId) {
-                    // 添加点击动画效果
-                    this.style.transform = 'scale(1.2)';
-                    this.style.opacity = '0.8';
-
-                    setTimeout(() => {
-                        window.location.href = 'locations/' + locationId + '.html';
-                    }, 150);
+                    window.location.href = 'locations/' + locationId + '.html';
                 }
             });
         });
