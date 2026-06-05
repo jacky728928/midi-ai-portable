@@ -24,7 +24,7 @@
                 <!-- 标题区域 -->
                 <div class="map-title-area">
                     <h2>研学之旅路线</h2>
-                    <p>从南昌西站出发，探索江西的文化瑰宝</p>
+                    <p>从南昌西站出发，先访滕王阁，后瞻八一起义纪念馆</p>
                 </div>
 
                 <!-- 宝藏路线 -->
@@ -33,8 +33,8 @@
                     <!-- 路线路径（虚线） - 使用L直线连接每个地点 -->
                     <path class="route-path" d="
                         M 400, 1100
-                        L 350, 1000
-                        L 250, 900
+                        L 250, 1000
+                        L 350, 900
                         L 180, 800
                         L 230, 700
                         L 270, 600
@@ -55,20 +55,20 @@
                         <text x="400" y="1155" class="marker-name">南昌西站</text>
                     </g>
 
-                    <!-- 2: 八一起义纪念馆 -->
-                    <g class="map-marker" data-location="bayiqiyijinianguan">
-                        <circle cx="350" cy="1000" r="28" class="marker-bg" />
-                        <circle cx="350" cy="1000" r="22" class="marker-inner" />
-                        <text x="350" y="1007" class="marker-icon">军</text>
-                        <text x="350" y="1045" class="marker-name">八一起义纪念馆</text>
+                    <!-- 2: 滕王阁 -->
+                    <g class="map-marker" data-location="tengwangge">
+                        <circle cx="250" cy="1000" r="28" class="marker-bg" />
+                        <circle cx="250" cy="1000" r="22" class="marker-inner" />
+                        <text x="250" y="1007" class="marker-icon">阁</text>
+                        <text x="250" y="1045" class="marker-name">滕王阁</text>
                     </g>
 
-                    <!-- 3: 滕王阁 -->
-                    <g class="map-marker" data-location="tengwangge">
-                        <circle cx="250" cy="900" r="28" class="marker-bg" />
-                        <circle cx="250" cy="900" r="22" class="marker-inner" />
-                        <text x="250" y="907" class="marker-icon">阁</text>
-                        <text x="250" y="945" class="marker-name">滕王阁</text>
+                    <!-- 3: 八一起义纪念馆 -->
+                    <g class="map-marker" data-location="bayiqiyijinianguan">
+                        <circle cx="350" cy="900" r="28" class="marker-bg" />
+                        <circle cx="350" cy="900" r="22" class="marker-inner" />
+                        <text x="350" y="907" class="marker-icon">军</text>
+                        <text x="350" y="945" class="marker-name">八一起义纪念馆</text>
                     </g>
 
                     <!-- 4: 万寿宫街区 -->
@@ -153,7 +153,11 @@
                     </div>
                     <div class="legend-item">
                         <span class="legend-icon"></span>
-                        <span>途经景点</span>
+                        <span>第2站 - 滕王阁</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-icon"></span>
+                        <span>第3站 - 八一起义纪念馆</span>
                     </div>
                     <div class="legend-item">
                         <span class="legend-icon end"></span>
