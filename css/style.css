@@ -118,63 +118,95 @@ body {
 
 /* ========== 藏宝图页面样式 ========== */
 .treasure-map-page {
-    background: linear-gradient(180deg, #f5e6d3 0%, #e8d4b8 100%);
+    background: linear-gradient(180deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
     min-height: 100vh;
 }
 
 .treasure-header {
-    background: linear-gradient(135deg, #8B4513 0%, #A0522D 50%, #CD853F 100%);
+    background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 50%, #4f46e5 100%);
     color: white;
-    padding: 2rem;
+    padding: 2.5rem 2rem;
     text-align: center;
-    box-shadow: 0 4px 20px rgba(139, 69, 19, 0.4);
-    border-bottom: 4px solid #654321;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 -4px 0 rgba(0, 0, 0, 0.2);
+    border-bottom: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.treasure-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 40%);
+    pointer-events: none;
 }
 
 .treasure-header h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.1em;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.12em;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 40px rgba(102, 126, 234, 0.3);
+    position: relative;
+    z-index: 1;
 }
 
 .header-subtitle {
-    font-size: 1.2rem;
-    opacity: 0.95;
-    font-weight: 400;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-size: 1.25rem;
+    opacity: 1;
+    font-weight: 500;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
 }
 
 .treasure-map-container {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    max-width: 950px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
 }
 
 /* 藏宝图整体样式 */
 .treasure-map {
-    background: linear-gradient(145deg, #f4e4c1 0%, #e8d4a8 100%);
-    border-radius: 8px;
-    padding: 2rem;
+    background: linear-gradient(145deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    border-radius: 24px;
+    padding: 2.5rem;
     position: relative;
     box-shadow:
-        0 0 0 4px #8B4513,
-        0 0 0 8px #654321,
-        0 0 0 12px #8B4513,
-        0 10px 40px rgba(139, 69, 19, 0.3);
+        0 20px 60px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.treasure-map::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .map-border {
     position: absolute;
-    top: 15px;
-    left: 15px;
-    right: 15px;
-    bottom: 15px;
-    border: 3px dashed #8B4513;
-    border-radius: 4px;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    border: 2px solid rgba(99, 102, 241, 0.3);
+    border-radius: 16px;
     pointer-events: none;
-    opacity: 0.3;
+    opacity: 1;
+    box-shadow: inset 0 0 20px rgba(99, 102, 241, 0.1);
 }
 
 .map-content {
@@ -185,23 +217,27 @@ body {
 /* 地图标题区域 */
 .map-title-area {
     text-align: center;
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    border-bottom: 2px solid #8B4513;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(99, 102, 241, 0.3);
+    background: linear-gradient(180deg, rgba(99, 102, 241, 0.1) 0%, transparent 100%);
+    border-radius: 12px;
 }
 
 .map-title-area h2 {
-    font-size: 1.8rem;
-    color: #654321;
+    font-size: 2rem;
+    color: #e0e7ff;
     font-weight: 700;
-    letter-spacing: 0.1em;
-    margin-bottom: 0.5rem;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.6rem;
+    text-shadow: 0 2px 8px rgba(99, 102, 241, 0.4);
 }
 
 .map-title-area p {
-    font-size: 1rem;
-    color: #8B4513;
-    font-style: italic;
+    font-size: 1.05rem;
+    color: #a5b4fc;
+    font-style: normal;
+    font-weight: 400;
 }
 
 /* SVG路线图 */
@@ -209,16 +245,18 @@ body {
     width: 100%;
     height: auto;
     display: block;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
 }
 
 /* 路线路径 */
 .route-path {
     fill: none;
-    stroke: #8B4513;
-    stroke-width: 5;
-    stroke-dasharray: 20, 12;
+    stroke: url(#routeGradient);
+    stroke-width: 6;
+    stroke-dasharray: 25, 15;
     stroke-linecap: round;
-    animation: dash 30s linear infinite;
+    animation: dash 25s linear infinite;
+    filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.4));
 }
 
 @keyframes dash {
@@ -230,197 +268,274 @@ body {
 /* 地点标记 */
 .map-marker {
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .map-marker:hover {
-    transform: scale(1.15);
+    transform: scale(1.2);
 }
 
 .map-marker:hover .marker-bg {
-    fill: #CD853F;
+    fill: #6366f1;
+    filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.8));
 }
 
 .map-marker:hover .marker-inner {
-    fill: #FFD700;
+    fill: #818cf8;
+}
+
+.map-marker:hover .marker-icon {
+    fill: #ffffff;
+}
+
+.map-marker:hover .marker-name {
+    fill: #c7d2fe;
+    text-shadow: 0 0 10px rgba(199, 210, 254, 0.6);
 }
 
 .marker-bg {
-    fill: #D2691E;
-    stroke: #8B4513;
+    fill: #4f46e5;
+    stroke: #818cf8;
     stroke-width: 3;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    filter: drop-shadow(0 4px 8px rgba(79, 70, 229, 0.5));
 }
 
 .marker-inner {
-    fill: #F4A460;
-    transition: all 0.3s ease;
+    fill: #6366f1;
+    transition: all 0.4s ease;
 }
 
 .marker-icon {
     font-size: 18px;
-    font-weight: bold;
-    fill: #654321;
+    font-weight: 800;
+    fill: #e0e7ff;
     text-anchor: middle;
     dominant-baseline: middle;
-    font-family: "SimHei", "Microsoft YaHei", sans-serif;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    transition: all 0.4s ease;
 }
 
 .marker-name {
     font-size: 14px;
     font-weight: 600;
-    fill: #654321;
+    fill: #c7d2fe;
     text-anchor: middle;
-    font-family: "SimSun", "Microsoft YaHei", sans-serif;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    transition: all 0.4s ease;
 }
 
 /* 起点标记样式 */
 .map-marker.start-point .marker-bg {
-    fill: #228B22;
-    stroke: #006400;
+    fill: #10b981;
+    stroke: #34d399;
+    filter: drop-shadow(0 4px 12px rgba(16, 185, 129, 0.6));
 }
 
 .map-marker.start-point .marker-inner {
-    fill: #90EE90;
+    fill: #34d399;
 }
 
 .map-marker.start-point .marker-icon {
-    fill: #006400;
+    fill: #ecfdf5;
+}
+
+.map-marker.start-point:hover .marker-bg {
+    fill: #059669;
+    filter: drop-shadow(0 0 25px rgba(16, 185, 129, 0.9));
 }
 
 /* 终点标记样式 */
 .map-marker.end-point .marker-bg {
-    fill: #FF4500;
-    stroke: #8B0000;
+    fill: #f59e0b;
+    stroke: #fbbf24;
+    filter: drop-shadow(0 4px 12px rgba(245, 158, 11, 0.6));
 }
 
 .map-marker.end-point .marker-inner {
-    fill: #FFD700;
+    fill: #fbbf24;
 }
 
 .map-marker.end-point .marker-icon {
-    fill: #8B0000;
+    fill: #fef3c7;
     font-size: 20px;
+}
+
+.map-marker.end-point:hover .marker-bg {
+    fill: #d97706;
+    filter: drop-shadow(0 0 25px rgba(245, 158, 11, 0.9));
 }
 
 /* 图例 */
 .map-legend {
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    margin-top: 1.5rem;
-    padding-top: 1rem;
-    border-top: 2px solid #8B4513;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(99, 102, 241, 0.3);
 }
 
 .legend-item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    color: #654321;
-    font-size: 0.9rem;
+    gap: 0.75rem;
+    color: #c7d2fe;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    transition: all 0.3s ease;
+}
+
+.legend-item:hover {
+    background: rgba(99, 102, 241, 0.2);
+    transform: translateY(-2px);
 }
 
 .legend-icon {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
-    background: #D2691E;
-    border: 2px solid #8B4513;
+    background: #6366f1;
+    border: 2px solid #818cf8;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
 }
 
 .legend-icon.start {
-    background: #228B22;
-    border-color: #006400;
+    background: #10b981;
+    border-color: #34d399;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
 }
 
 .legend-icon.end {
-    background: #FF4500;
-    border-color: #8B0000;
+    background: #f59e0b;
+    border-color: #fbbf24;
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
 }
 
 /* ========== 地点详情页面样式 ========== */
 .location-page {
-    background: #f5f7fa;
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
     min-height: 100vh;
 }
 
 .location-header {
-    background: linear-gradient(135deg, #1a472a 0%, #2c5f2d 100%);
+    background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 50%, #4f46e5 100%);
     color: white;
     padding: 1.5rem 2rem;
     display: flex;
     align-items: center;
     gap: 2rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.location-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.06) 0%, transparent 40%);
+    pointer-events: none;
 }
 
 .back-btn {
     color: white;
     text-decoration: none;
     font-size: 1rem;
-    padding: 0.5rem 1rem;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 25px;
+    padding: 0.6rem 1.2rem;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
     transition: all 0.3s ease;
     white-space: nowrap;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
 }
 
 .back-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
     border-color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .location-header h1 {
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.02em;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .location-content {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 2.5rem 1.5rem;
 }
 
 .location-image {
     width: 100%;
-    border-radius: 12px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-    margin-bottom: 2rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+.location-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+    pointer-events: none;
+    z-index: 1;
 }
 
 .location-image img {
     width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s ease;
 }
 
 .location-image:hover img {
-    transform: scale(1.02);
+    transform: scale(1.03);
 }
 
 .location-info {
-    background: white;
+    background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
     padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.15);
 }
 
 .location-info h2 {
     font-size: 1.8rem;
-    color: #1a472a;
+    color: #e0e7ff;
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
-    border-bottom: 3px solid #2c5f2d;
+    border-bottom: 2px solid rgba(99, 102, 241, 0.3);
+    text-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
 }
 
 .location-info p {
     font-size: 1.1rem;
-    line-height: 1.8;
-    color: #555;
+    line-height: 1.9;
+    color: #cbd5e1;
 }
 
 /* ========== 响应式设计 ========== */
@@ -441,32 +556,64 @@ body {
         padding: 1rem;
     }
 
+    .map-border {
+        top: 8px;
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+    }
+
+    .map-title-area {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
     .map-title-area h2 {
         font-size: 1.4rem;
+    }
+
+    .map-title-area p {
+        font-size: 0.95rem;
     }
 
     .map-legend {
         flex-direction: column;
         align-items: center;
         gap: 0.8rem;
+        margin-top: 1.5rem;
+        padding-top: 1rem;
     }
 
     .location-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 1rem;
+        padding: 1.2rem 1.5rem;
     }
 
     .location-header h1 {
         font-size: 1.5rem;
     }
 
+    .location-content {
+        padding: 1.5rem 1rem;
+    }
+
     .location-info {
         padding: 1.5rem;
+        border-radius: 16px;
     }
 
     .location-info h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+    }
+
+    .location-info p {
+        font-size: 1rem;
+    }
+
+    .location-image {
+        border-radius: 16px;
     }
 }
 
@@ -485,12 +632,33 @@ body {
         font-size: 0.9rem;
     }
 
+    .treasure-header {
+        padding: 1.5rem 1rem;
+    }
+
     .treasure-header h1 {
         font-size: 1.6rem;
     }
 
+    .header-subtitle {
+        font-size: 1rem;
+    }
+
+    .treasure-map {
+        padding: 0.8rem;
+        border-radius: 16px;
+    }
+
+    .map-title-area {
+        padding: 0.8rem;
+    }
+
+    .map-title-area h2 {
+        font-size: 1.2rem;
+    }
+
     .map-title-area p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
     .marker-icon {
@@ -498,6 +666,16 @@ body {
     }
 
     .marker-name {
-        font-size: 12px;
+        font-size: 11px;
+    }
+
+    .legend-item {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .legend-icon {
+        width: 18px;
+        height: 18px;
     }
 }
