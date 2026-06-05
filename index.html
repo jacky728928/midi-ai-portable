@@ -495,6 +495,71 @@
             font-family: 'ZCOOL XiaoWei', serif;
         }
 
+        .badge-uniform-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 700px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .badge-uniform-card {
+            background: linear-gradient(145deg, rgba(26, 92, 69, 0.85), rgba(13, 59, 46, 0.9));
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(144, 238, 144, 0.18);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .badge-uniform-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(144, 238, 144, 0.45);
+            box-shadow: 0 14px 48px rgba(0, 0, 0, 0.28), 0 6px 20px rgba(144, 238, 144, 0.12);
+        }
+
+        .badge-uniform-card h4 {
+            font-size: 1.15rem;
+            margin-bottom: 15px;
+            color: #f5f5dc;
+            font-family: 'Ma Shan Zheng', cursive;
+        }
+
+        .badge-uniform-card .small-placeholder {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background: rgba(13, 59, 46, 0.5);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgba(144, 238, 144, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .badge-uniform-card .small-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(144, 238, 144, 0.1), transparent);
+            animation: shimmerGreen 5s infinite;
+        }
+
+        .badge-uniform-card .small-placeholder .text {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.55);
+            text-align: center;
+            padding: 15px;
+            font-family: 'ZCOOL XiaoWei', serif;
+        }
+
         .class-info {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -768,6 +833,7 @@
             .features { grid-template-columns: 1fr; gap: 14px; }
             .feature-card { padding: 18px; }
             .feature-card .icon, .feature-card .seal-icon { width: 40px; height: 40px; }
+            .badge-uniform-grid { grid-template-columns: 1fr; gap: 14px; }
             .member-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
             .member-avatar { width: 44px; height: 44px; font-size: 1.1rem; }
             .member-card .name { font-size: 0.85rem; }
@@ -791,6 +857,7 @@
             .info-card .seal-icon .char { font-size: 1rem; }
             .info-card .value { font-size: 1.2rem; }
             .features { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+            .badge-uniform-grid { gap: 14px; }
             .member-grid { grid-template-columns: repeat(4, 1fr); gap: 10px; }
             .member-avatar { width: 40px; height: 40px; font-size: 1rem; }
             .member-card { padding: 12px 6px; }
@@ -827,6 +894,29 @@
                 <p class="subtitle">团结奋进 · 文理兼备 · 追求卓越</p>
                 <div class="placeholder-image">
                     <div class="text">🎓 班级主视觉图片占位符<br/>北京八中校门/校徽</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="slide-content">
+                <h2>班徽班服</h2>
+                <p>我们的班徽和班服是班级精神的象征，凝聚了全班同学的智慧和创意。</p>
+                <div class="badge-uniform-grid">
+                    <div class="badge-uniform-card">
+                        <div class="icon"><div class="seal-icon"><span class="char">徽</span></div></div>
+                        <h4>班徽</h4>
+                        <div class="small-placeholder">
+                            <div class="text">🪙 班徽设计图占位符<br/>展示班级精神象征</div>
+                        </div>
+                    </div>
+                    <div class="badge-uniform-card">
+                        <div class="icon"><div class="seal-icon"><span class="char">服</span></div></div>
+                        <h4>班服</h4>
+                        <div class="small-placeholder">
+                            <div class="text">👕 班服设计图占位符<br/>展示班级特色服装</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -988,7 +1078,7 @@
         </div>
     </div>
 
-    <div class="slide-number" id="slideNumber">1 / 8</div>
+    <div class="slide-number" id="slideNumber">1 / 9</div>
     <div class="nav-arrows">
         <div class="nav-arrow" id="prevBtn">←</div>
         <div class="nav-arrow" id="nextBtn">→</div>
