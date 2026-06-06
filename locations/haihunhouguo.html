@@ -3,22 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>海昏侯国遗址公园 - 研学江西</title>
+    <title>海昏侯国遗址博物馆 - 研学江西</title>
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .hall-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
+            border: 2px solid rgba(102, 126, 234, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.4s ease;
+        }
+        .hall-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(102, 126, 234, 0.25);
+            border-color: rgba(102, 126, 234, 0.4);
+        }
+        .hall-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        .hall-title {
+            font-size: 1.6rem;
+            color: #2d1b69;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .hall-image {
+            width: 100%;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+        .hall-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .hall-content {
+            line-height: 1.8;
+            color: #4a4a6a;
+        }
+        .hall-content ul {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+        }
+        .hall-content li {
+            margin-bottom: 0.5rem;
+        }
+        .page-intro {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(254, 202, 87, 0.1) 100%);
+            border-left: 4px solid #ff6b6b;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+        .page-intro h3 {
+            color: #2d1b69;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+        .page-intro p {
+            color: #4a4a6a;
+            line-height: 1.8;
+        }
+    </style>
 </head>
 <body class="location-page">
     <header class="location-header">
         <a href="../map.html" class="back-btn">← 返回地图</a>
-        <h1>海昏侯国遗址公园</h1>
+        <h1>海昏侯国遗址博物馆</h1>
     </header>
 
     <main class="location-content">
         <div class="location-image">
-            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Haihunhou%20Archaeological%20Site%20Park%20ancient%20Han%20dynasty%20relics%20museum&image_size=landscape_16_9" alt="海昏侯国遗址公园">
+            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Haihunhou%20Archaeological%20Site%20Museum%20ancient%20Han%20dynasty%20grand%20building%20architecture&image_size=landscape_16_9" alt="海昏侯国遗址博物馆">
         </div>
+        
         <section class="location-info">
-            <h2>关于海昏侯国遗址公园</h2>
-            <p>内容待补充...</p>
+            <div class="page-intro">
+                <h3>展馆参观指南</h3>
+                <p>海昏侯国遗址博物馆是一座集文物保护、展示、研究、教育为一体的现代化遗址博物馆。以下为您介绍七个主题展厅，带您穿越时空，领略汉代文明的璀璨辉煌。</p>
+            </div>
+
+            <div class="hall-card">
+                <span class="hall-number">第一展厅</span>
+                <h3 class="hall-title">惊现侯国</h3>
+                <div class="hall-image">
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Haihunhou%20archaeological%20excavation%20site%20Han%20dynasty%20tomb%20discovery&image_size=landscape_16_9" alt="惊现侯国展厅">
+                </div>
+                <div class="hall-content">
+                    <p><strong>序厅与考古发现</strong>——开启探索海昏侯国的神秘之旅</p>
+                    <ul>
+                        <li><strong>沙盘展示</strong>：海昏侯国城址、墓园整体地貌微缩景观</li>
+                        <li><strong>考古历程</strong>：墓葬勘探、发掘纪实照片、考古工具实物</li>
+                        <li><strong>历史背景</strong>：西汉豫章郡历史沿革</li>
+                        <li><strong>人物生平</strong>：刘贺传奇一生——从昌邑王到废帝再到海昏侯</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="hall-card">
+                <span class="hall-number">第二展厅</span>
+                <h3 class="hall-title">王侯一生</h3>
+                <div class="hall-image">
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Han%20dynasty%20noble%20life%20Liu%20He%20royal%20family%20history%20exhibition&image_size=landscape_16_9" alt="王侯一生展厅">
+                </div>
+                <div class="hall-content">
+                    <p><strong>身世履历展区</strong>——展现刘贺跌宕起伏的人生轨迹</p>
+                    <ul>
+                        <li><strong>家族谱系</strong>：汉武帝、李夫人一脉世系传承</li>
+                        <li><strong>昌邑岁月</strong>：早年封地生活相关文物</li>
+                        <li><strong>命运转折</strong>：短暂称帝、被贬豫章、封海昏侯的史料与文物</li>
+                        <li><strong>丧葬制度</strong>：汉代列侯丧葬制度、墓葬形制图解</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="hall-card">
+                <span class="hall-number">第三展厅</span>
+                <h3 class="hall-title">礼乐华章</h3>
+                <div class="hall-image">
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Han%20dynasty%20bronze%20chimes%20bells%20ancient%20musical%20instruments%20ceremony&image_size=landscape_16_9" alt="礼乐华章展厅">
+                </div>
+                <div class="hall-content">
+                    <p><strong>礼乐宴飨</strong>——聆听来自两千年前的雅乐之声</p>
+                    <ul>
+                        <li><strong>青铜编钟</strong>：成套青铜编钟（复原件），体验汉代宫廷音乐</li>
+                        <li><strong>石编磬</strong>：精美石质打击乐器</li>
+                        <li><strong>乐舞陶俑</strong>：姿态优美的汉代乐舞俑</li>
+                        <li><strong>宴饮重器</strong>：青铜瑟枘、宴饮用青铜鼎、钫、壶等礼器</li>
+                        <li><strong>制度展示</strong>：汉代王侯宴饮礼乐制度详解</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="hall-card">
+                <span class="hall-number">第四展厅</span>
+                <h3 class="hall-title">金玉满堂</h3>
+                <div class="hall-image">
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Haihunhou%20gold%20ingots%20马蹄金%20麟趾金%20ancient%20Chinese%20treasure%20luxury&image_size=landscape_16_9" alt="金玉满堂展厅">
+                </div>
+                <div class="hall-content">
+                    <p><strong>黄金与珍宝</strong>——展馆核心，惊艳世界的汉代财富</p>
+                    <ul>
+                        <li><strong>金器精品</strong>：马蹄金、麟趾金（褭蹏金）、金饼、金板（真品）</li>
+                        <li><strong>五铢钱山</strong>：出土十余吨五铢钱复原陈列</li>
+                        <li><strong>精美玉器</strong>：玉璧、玉饰、玛瑙、琥珀辟邪佩</li>
+                        <li><strong>水晶饰品</strong>：璀璨夺目的水晶配饰</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="hall-card">
+                <span class="hall-number">第五展厅</span>
+                <h3 class="hall-title">百味生活</h3>
+                <div class="hall-image">
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Han%20dynasty%20daily%20life%20bronze%20hot%20pot%20lacquerware%20kitchenware&image_size=landscape_16_9" alt="百味生活展厅">
+                </div>
+                <div class="hall-content">
+                    <p><strong>日用器物</strong>——还原海昏侯国的日常生活图景</p>
+                    <ul>
+                        <li><strong>青铜生活器</strong>：铜火锅、青铜灯、铜釜、铜量器、成套铜权（砝码）</li>
+                        <li><strong>精美漆器</strong>：银扣贴金漆奁、各类漆木器皿（原件+复制品）</li>
+                        <li><strong>农作器具</strong>：汉代农具实物</li>
+                        <li><strong>仓储明器</strong>：陶仓、陶灶等建筑模型</li>
+                        <li><strong>车马器</strong>：汉代车马配饰</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="hall-card">
+                <span class="hall-number">第六展厅</span>
+                <h3 class="hall-title">儒风鼎盛</h3>
+                <div class="hall-image">
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Han%20dynasty%20Confucius%20bamboo%20slips%20classics%20ancient%20books%20scholarship&image_size=landscape_16_9" alt="儒风鼎盛展厅">
+                </div>
+                <div class="hall-content">
+                    <p><strong>文化典籍</strong>——探寻汉代尊儒崇经的文化盛况</p>
+                    <ul>
+                        <li><strong>孔子漆衣镜</strong>（复制品）：衣镜赋、孔子及弟子画像</li>
+                        <li><strong>竹简复刻</strong>：《诗经》《易经》《论语》等出土简牍拓片与标本</li>
+                        <li><strong>经学文化</strong>：汉代尊儒、经学兴盛相关文物</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="hall-card">
+                <span class="hall-number">第七展厅</span>
+                <h3 class="hall-title">豫章遗韵</h3>
+                <div class="hall-image">
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Han%20dynasty%20Yuzhang%20ancient%20city%20Jiangxi%20history%20culture%20archaeology&image_size=landscape_16_9" alt="豫章遗韵展厅">
+                </div>
+                <div class="hall-content">
+                    <p><strong>海昏侯国与江西历史</strong>——感受江西地域文明的深厚底蕴</p>
+                    <ul>
+                        <li><strong>城址遗物</strong>：城址出土陶器、建筑构件</li>
+                        <li><strong>行政区划</strong>：海昏侯国历史地理</li>
+                        <li><strong>社会经济</strong>：人口、农耕、商贸发展</li>
+                        <li><strong>丝路交流</strong>：汉代江西与丝绸之路相关文物</li>
+                    </ul>
+                </div>
+            </div>
         </section>
     </main>
 
