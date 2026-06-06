@@ -28,18 +28,15 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    /* 黑金配色 - 深邃夜空 */
     background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: opacity 0.8s ease-out;
-    /* 传统纹样装饰 */
     position: relative;
 }
 
-/* 添加传统纹样背景 */
 .welcome-container::before {
     content: '☯ ◈ ☯ ◈ ☯ ◈ ☯ ◈ ☯ ◈ ☯ ◈';
     position: absolute;
@@ -83,7 +80,6 @@ body {
     position: relative;
 }
 
-/* 标题装饰框 */
 .welcome-title {
     font-size: 5rem;
     font-weight: 700;
@@ -99,7 +95,6 @@ body {
     padding: 0 2rem;
 }
 
-/* 标题装饰线 */
 .welcome-title::before,
 .welcome-title::after {
     content: '═══════════';
@@ -167,7 +162,7 @@ body {
 }
 
 .ripple {
-    display: none; /* 隐藏原有的ripple效果 */
+    display: none;
 }
 
 @keyframes fadeInUp {
@@ -337,7 +332,7 @@ body {
     padding: 0 1.5rem;
 }
 
-/* 藏宝图整体样式 - 中国历史风格 */
+/* 藏宝图整体样式 */
 .treasure-map {
     background: linear-gradient(145deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
     border-radius: 24px;
@@ -409,6 +404,31 @@ body {
     letter-spacing: 0.05em;
 }
 
+/* 滑动地图容器 */
+.map-scroll-container {
+    max-height: 60vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 12px;
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.map-scroll-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.map-scroll-container::-webkit-scrollbar-track {
+    background: rgba(50, 50, 50, 0.5);
+    border-radius: 4px;
+}
+
+.map-scroll-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #d4af37, #ffd700);
+    border-radius: 4px;
+}
+
 /* SVG路线图 */
 .route-svg {
     width: 100%;
@@ -476,7 +496,7 @@ body {
 }
 
 .marker-icon {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 800;
     fill: #0a0a0a;
     text-anchor: middle;
@@ -486,7 +506,7 @@ body {
 }
 
 .marker-name {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 600;
     fill: #d4af37;
     text-anchor: middle;
@@ -511,7 +531,7 @@ body {
 
 .map-marker.start-point:hover .marker-bg {
     fill: #ffd700;
-    filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.9));
+    filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.9));
 }
 
 /* 终点标记样式 */
@@ -527,12 +547,32 @@ body {
 
 .map-marker.end-point .marker-icon {
     fill: #0a0a0a;
-    font-size: 20px;
+    font-size: 28px;
 }
 
 .map-marker.end-point:hover .marker-bg {
     fill: #ffd700;
-    filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.9));
+    filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.9));
+}
+
+/* 滑动提示 */
+.scroll-hint {
+    text-align: center;
+    margin: 1.5rem 0;
+    padding: 0.8rem;
+    color: rgba(212, 175, 55, 0.7);
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+}
+
+.scroll-hint span {
+    animation: bounce 2s infinite;
+    display: inline-block;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
 }
 
 /* 图例 */
@@ -586,7 +626,6 @@ body {
     box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
 }
 
-/* ========== 地点详情页面样式 ========== */
 /* ========== 地点详情页面样式 - 中国历史风格 ========== */
 .location-page {
     background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
@@ -829,6 +868,15 @@ body {
     .loading-tips {
         font-size: 0.9rem;
     }
+
+    /* 地图图标字体调整 */
+    .marker-icon {
+        font-size: 20px;
+    }
+
+    .marker-name {
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -884,45 +932,19 @@ body {
     }
 
     .treasure-header h1 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
 
-    .header-subtitle {
-        font-size: 1rem;
+    .treasure-map-container {
+        padding: 0 1rem;
     }
 
-    .treasure-map {
-        padding: 0.8rem;
-        border-radius: 16px;
-    }
-
-    .map-title-area {
-        padding: 0.8rem;
-    }
-
-    .map-title-area h2 {
-        font-size: 1.2rem;
-    }
-
-    .map-title-area p {
-        font-size: 0.85rem;
-    }
-
+    /* 地图图标字体进一步调整 */
     .marker-icon {
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .marker-name {
-        font-size: 11px;
-    }
-
-    .legend-item {
-        font-size: 0.85rem;
-        padding: 0.4rem 0.8rem;
-    }
-
-    .legend-icon {
-        width: 18px;
-        height: 18px;
+        font-size: 14px;
     }
 }

@@ -27,205 +27,212 @@
                     <p>从南昌西站出发，先访滕王阁，后瞻八一起义纪念馆</p>
                 </div>
 
-                <!-- 宝藏路线 -->
-                <svg viewBox="0 0 800 1200" class="route-svg" id="routeSvg">
-                    <!-- 定义渐变 -->
-                    <defs>
-                        <linearGradient id="routeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#ffd700;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#d4af37;stop-opacity:1" />
-                        </linearGradient>
-                        <filter id="glow">
-                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                            <feMerge>
-                                <feMergeNode in="coloredBlur"/>
-                                <feMergeNode in="SourceGraphic"/>
-                            </feMerge>
-                        </filter>
-                        <filter id="strongGlow">
-                            <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
-                            <feMerge>
-                                <feMergeNode in="coloredBlur"/>
-                                <feMergeNode in="SourceGraphic"/>
-                            </feMerge>
-                        </filter>
-                    </defs>
+                <!-- 宝藏路线 - 支持滑动的容器 -->
+                <div class="map-scroll-container">
+                    <svg viewBox="0 0 800 1600" class="route-svg" id="routeSvg">
+                        <!-- 定义渐变 -->
+                        <defs>
+                            <linearGradient id="routeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#ffd700;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#d4af37;stop-opacity:1" />
+                            </linearGradient>
+                            <filter id="glow">
+                                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                            <filter id="strongGlow">
+                                <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
 
-                    <!-- 装饰性传统纹样背景 -->
-                    <text x="100" y="200" fill="rgba(212, 175, 55, 0.15)" font-size="20">◈</text>
-                    <text x="700" y="150" fill="rgba(212, 175, 55, 0.12)" font-size="18">☯</text>
-                    <text x="150" y="400" fill="rgba(212, 175, 55, 0.15)" font-size="20">◈</text>
-                    <text x="650" y="350" fill="rgba(212, 175, 55, 0.12)" font-size="18">☯</text>
-                    <text x="120" y="600" fill="rgba(212, 175, 55, 0.15)" font-size="20">◈</text>
-                    <text x="680" y="550" fill="rgba(212, 175, 55, 0.12)" font-size="18">☯</text>
-                    <text x="100" y="800" fill="rgba(212, 175, 55, 0.15)" font-size="20">◈</text>
-                    <text x="720" y="750" fill="rgba(212, 175, 55, 0.12)" font-size="18">☯</text>
-                    <text x="140" y="1000" fill="rgba(212, 175, 55, 0.15)" font-size="20">◈</text>
-                    <text x="660" y="950" fill="rgba(212, 175, 55, 0.12)" font-size="18">☯</text>
+                        <!-- 装饰性传统纹样背景 -->
+                        <text x="100" y="300" fill="rgba(212, 175, 55, 0.15)" font-size="24">◈</text>
+                        <text x="700" y="200" fill="rgba(212, 175, 55, 0.12)" font-size="22">☯</text>
+                        <text x="150" y="550" fill="rgba(212, 175, 55, 0.15)" font-size="24">◈</text>
+                        <text x="650" y="500" fill="rgba(212, 175, 55, 0.12)" font-size="22">☯</text>
+                        <text x="120" y="750" fill="rgba(212, 175, 55, 0.15)" font-size="24">◈</text>
+                        <text x="680" y="700" fill="rgba(212, 175, 55, 0.12)" font-size="22">☯</text>
+                        <text x="100" y="1000" fill="rgba(212, 175, 55, 0.15)" font-size="24">◈</text>
+                        <text x="720" y="950" fill="rgba(212, 175, 55, 0.12)" font-size="22">☯</text>
+                        <text x="140" y="1300" fill="rgba(212, 175, 55, 0.15)" font-size="24">◈</text>
+                        <text x="660" y="1250" fill="rgba(212, 175, 55, 0.12)" font-size="22">☯</text>
 
-                    <!-- 路线路径（虚线） - 使用L直线连接每个地点 -->
-                    <path class="route-path" d="
-                        M 400, 1100
-                        L 250, 1000
-                        L 350, 900
-                        L 180, 800
-                        L 230, 700
-                        L 270, 600
-                        L 340, 500
-                        L 420, 400
-                        L 500, 300
-                        L 560, 230
-                        L 620, 160
-                        L 660, 100
-                    " />
+                        <!-- 路线路径（虚线） - 使用L直线连接每个地点 -->
+                        <path class="route-path" d="
+                            M 400, 1500
+                            L 250, 1380
+                            L 350, 1260
+                            L 180, 1140
+                            L 230, 1020
+                            L 270, 900
+                            L 340, 780
+                            L 420, 660
+                            L 500, 540
+                            L 560, 450
+                            L 620, 360
+                            L 660, 280
+                        " />
 
-                    <!-- 地点标记 -->
-                    <!-- 1: 南昌西站（起点） -->
-                    <g class="map-marker start-point" data-location="nanchangxizhan">
-                        <circle cx="400" cy="1100" r="45" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
-                            <animate attributeName="r" values="40;50;40" dur="2s" repeatCount="indefinite"/>
-                            <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite"/>
-                        </circle>
-                        <circle cx="400" cy="1100" r="35" class="marker-bg" />
-                        <circle cx="400" cy="1100" r="26" class="marker-inner" />
-                        <text x="400" y="1108" class="marker-icon">起</text>
-                        <text x="400" y="1155" class="marker-name">南昌西站</text>
-                    </g>
+                        <!-- 地点标记 - 更大的图标 -->
+                        <!-- 1: 南昌西站（起点） -->
+                        <g class="map-marker start-point" data-location="nanchangxizhan">
+                            <circle cx="400" cy="1500" r="60" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
+                                <animate attributeName="r" values="55;65;55" dur="2s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="400" cy="1500" r="45" class="marker-bg" />
+                            <circle cx="400" cy="1500" r="33" class="marker-inner" />
+                            <text x="400" y="1510" class="marker-icon">起</text>
+                            <text x="400" y="1565" class="marker-name">南昌西站</text>
+                        </g>
 
-                    <!-- 2: 滕王阁 -->
-                    <g class="map-marker" data-location="tengwangge">
-                        <circle cx="250" cy="1000" r="36" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
-                            <animate attributeName="r" values="32;40;32" dur="2.2s" repeatCount="indefinite"/>
-                            <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2.2s" repeatCount="indefinite"/>
-                        </circle>
-                        <circle cx="250" cy="1000" r="28" class="marker-bg" />
-                        <circle cx="250" cy="1000" r="22" class="marker-inner" />
-                        <text x="250" y="1007" class="marker-icon">阁</text>
-                        <text x="250" y="1045" class="marker-name">滕王阁</text>
-                    </g>
+                        <!-- 2: 滕王阁 -->
+                        <g class="map-marker" data-location="tengwangge">
+                            <circle cx="250" cy="1380" r="48" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
+                                <animate attributeName="r" values="43;53;43" dur="2.2s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2.2s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="250" cy="1380" r="36" class="marker-bg" />
+                            <circle cx="250" cy="1380" r="28" class="marker-inner" />
+                            <text x="250" y="1388" class="marker-icon">阁</text>
+                            <text x="250" y="1435" class="marker-name">滕王阁</text>
+                        </g>
 
-                    <!-- 3: 八一起义纪念馆 -->
-                    <g class="map-marker" data-location="bayiqiyijinianguan">
-                        <circle cx="350" cy="900" r="36" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
-                            <animate attributeName="r" values="32;40;32" dur="1.8s" repeatCount="indefinite"/>
-                            <animate attributeName="opacity" values="0.2;0.5;0.2" dur="1.8s" repeatCount="indefinite"/>
-                        </circle>
-                        <circle cx="350" cy="900" r="28" class="marker-bg" />
-                        <circle cx="350" cy="900" r="22" class="marker-inner" />
-                        <text x="350" y="907" class="marker-icon">军</text>
-                        <text x="350" y="945" class="marker-name">八一起义纪念馆</text>
-                    </g>
+                        <!-- 3: 八一起义纪念馆 -->
+                        <g class="map-marker" data-location="bayiqiyijinianguan">
+                            <circle cx="350" cy="1260" r="48" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
+                                <animate attributeName="r" values="43;53;43" dur="1.8s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" values="0.2;0.5;0.2" dur="1.8s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="350" cy="1260" r="36" class="marker-bg" />
+                            <circle cx="350" cy="1260" r="28" class="marker-inner" />
+                            <text x="350" y="1268" class="marker-icon">军</text>
+                            <text x="350" y="1315" class="marker-name">八一起义纪念馆</text>
+                        </g>
 
-                    <!-- 4: 万寿宫街区 -->
-                    <g class="map-marker" data-location="wanshougong">
-                        <circle cx="180" cy="800" r="36" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
-                            <animate attributeName="r" values="32;40;32" dur="2.4s" repeatCount="indefinite"/>
-                            <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2.4s" repeatCount="indefinite"/>
-                        </circle>
-                        <circle cx="180" cy="800" r="28" class="marker-bg" />
-                        <circle cx="180" cy="800" r="22" class="marker-inner" />
-                        <text x="180" y="807" class="marker-icon">宫</text>
-                        <text x="180" y="845" class="marker-name">万寿宫街区</text>
-                    </g>
+                        <!-- 4: 万寿宫街区 -->
+                        <g class="map-marker" data-location="wanshougong">
+                            <circle cx="180" cy="1140" r="48" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
+                                <animate attributeName="r" values="43;53;43" dur="2.4s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2.4s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="180" cy="1140" r="36" class="marker-bg" />
+                            <circle cx="180" cy="1140" r="28" class="marker-inner" />
+                            <text x="180" y="1148" class="marker-icon">宫</text>
+                            <text x="180" y="1195" class="marker-name">万寿宫街区</text>
+                        </g>
 
-                    <!-- 5: 海昏侯国遗址公园 -->
-                    <g class="map-marker" data-location="haihunhouguo">
-                        <circle cx="230" cy="700" r="36" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
-                            <animate attributeName="r" values="32;40;32" dur="2s" repeatCount="indefinite"/>
-                            <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2s" repeatCount="indefinite"/>
-                        </circle>
-                        <circle cx="230" cy="700" r="28" class="marker-bg" />
-                        <circle cx="230" cy="700" r="22" class="marker-inner" />
-                        <text x="230" y="707" class="marker-icon">侯</text>
-                        <text x="230" y="745" class="marker-name">海昏侯国遗址</text>
-                    </g>
+                        <!-- 5: 海昏侯国遗址公园 -->
+                        <g class="map-marker" data-location="haihunhouguo">
+                            <circle cx="230" cy="1020" r="48" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
+                                <animate attributeName="r" values="43;53;43" dur="2s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="230" cy="1020" r="36" class="marker-bg" />
+                            <circle cx="230" cy="1020" r="28" class="marker-inner" />
+                            <text x="230" y="1028" class="marker-icon">侯</text>
+                            <text x="230" y="1075" class="marker-name">海昏侯国遗址</text>
+                        </g>
 
-                    <!-- 6: 庐山 -->
-                    <g class="map-marker" data-location="lushan">
-                        <circle cx="270" cy="600" r="36" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
-                            <animate attributeName="r" values="32;40;32" dur="2.1s" repeatCount="indefinite"/>
-                            <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2.1s" repeatCount="indefinite"/>
-                        </circle>
-                        <circle cx="270" cy="600" r="28" class="marker-bg" />
-                        <circle cx="270" cy="600" r="22" class="marker-inner" />
-                        <text x="270" y="607" class="marker-icon">山</text>
-                        <text x="270" y="645" class="marker-name">庐山</text>
-                    </g>
+                        <!-- 6: 庐山 -->
+                        <g class="map-marker" data-location="lushan">
+                            <circle cx="270" cy="900" r="48" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
+                                <animate attributeName="r" values="43;53;43" dur="2.1s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2.1s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="270" cy="900" r="36" class="marker-bg" />
+                            <circle cx="270" cy="900" r="28" class="marker-inner" />
+                            <text x="270" y="908" class="marker-icon">山</text>
+                            <text x="270" y="955" class="marker-name">庐山</text>
+                        </g>
 
-                    <!-- 7: 白鹿洞书院 -->
-                    <g class="map-marker" data-location="bailudongshuyuan">
-                        <circle cx="340" cy="500" r="36" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
-                            <animate attributeName="r" values="32;40;32" dur="1.9s" repeatCount="indefinite"/>
-                            <animate attributeName="opacity" values="0.2;0.5;0.2" dur="1.9s" repeatCount="indefinite"/>
-                        </circle>
-                        <circle cx="340" cy="500" r="28" class="marker-bg" />
-                        <circle cx="340" cy="500" r="22" class="marker-inner" />
-                        <text x="340" y="507" class="marker-icon">书</text>
-                        <text x="340" y="545" class="marker-name">白鹿洞书院</text>
-                    </g>
+                        <!-- 7: 白鹿洞书院 -->
+                        <g class="map-marker" data-location="bailudongshuyuan">
+                            <circle cx="340" cy="780" r="48" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
+                                <animate attributeName="r" values="43;53;43" dur="1.9s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" values="0.2;0.5;0.2" dur="1.9s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="340" cy="780" r="36" class="marker-bg" />
+                            <circle cx="340" cy="780" r="28" class="marker-inner" />
+                            <text x="340" y="788" class="marker-icon">书</text>
+                            <text x="340" y="835" class="marker-name">白鹿洞书院</text>
+                        </g>
 
-                    <!-- 8: 景德镇古窑景区 -->
-                    <g class="map-marker" data-location="jingdezhen">
-                        <circle cx="420" cy="400" r="36" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
-                            <animate attributeName="r" values="32;40;32" dur="2.3s" repeatCount="indefinite"/>
-                            <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2.3s" repeatCount="indefinite"/>
-                        </circle>
-                        <circle cx="420" cy="400" r="28" class="marker-bg" />
-                        <circle cx="420" cy="400" r="22" class="marker-inner" />
-                        <text x="420" y="407" class="marker-icon">瓷</text>
-                        <text x="420" y="445" class="marker-name">景德镇古窑</text>
-                    </g>
+                        <!-- 8: 景德镇古窑景区 -->
+                        <g class="map-marker" data-location="jingdezhen">
+                            <circle cx="420" cy="660" r="48" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
+                                <animate attributeName="r" values="43;53;43" dur="2.3s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2.3s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="420" cy="660" r="36" class="marker-bg" />
+                            <circle cx="420" cy="660" r="28" class="marker-inner" />
+                            <text x="420" y="668" class="marker-icon">瓷</text>
+                            <text x="420" y="715" class="marker-name">景德镇古窑</text>
+                        </g>
 
-                    <!-- 9: 陶溪川 -->
-                    <g class="map-marker" data-location="taoxichuan">
-                        <circle cx="500" cy="300" r="36" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
-                            <animate attributeName="r" values="32;40;32" dur="1.7s" repeatCount="indefinite"/>
-                            <animate attributeName="opacity" values="0.2;0.5;0.2" dur="1.7s" repeatCount="indefinite"/>
-                        </circle>
-                        <circle cx="500" cy="300" r="28" class="marker-bg" />
-                        <circle cx="500" cy="300" r="22" class="marker-inner" />
-                        <text x="500" y="307" class="marker-icon">溪</text>
-                        <text x="500" y="345" class="marker-name">陶溪川</text>
-                    </g>
+                        <!-- 9: 陶溪川 -->
+                        <g class="map-marker" data-location="taoxichuan">
+                            <circle cx="500" cy="540" r="48" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
+                                <animate attributeName="r" values="43;53;43" dur="1.7s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" values="0.2;0.5;0.2" dur="1.7s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="500" cy="540" r="36" class="marker-bg" />
+                            <circle cx="500" cy="540" r="28" class="marker-inner" />
+                            <text x="500" y="548" class="marker-icon">溪</text>
+                            <text x="500" y="595" class="marker-name">陶溪川</text>
+                        </g>
 
-                    <!-- 10: 百陶会研学基地 -->
-                    <g class="map-marker" data-location="baitaohui">
-                        <circle cx="560" cy="230" r="36" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
-                            <animate attributeName="r" values="32;40;32" dur="2.5s" repeatCount="indefinite"/>
-                            <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2.5s" repeatCount="indefinite"/>
-                        </circle>
-                        <circle cx="560" cy="230" r="28" class="marker-bg" />
-                        <circle cx="560" cy="230" r="22" class="marker-inner" />
-                        <text x="560" y="237" class="marker-icon">学</text>
-                        <text x="560" y="275" class="marker-name">百陶会研学基地</text>
-                    </g>
+                        <!-- 10: 百陶会研学基地 -->
+                        <g class="map-marker" data-location="baitaohui">
+                            <circle cx="560" cy="450" r="48" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
+                                <animate attributeName="r" values="43;53;43" dur="2.5s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2.5s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="560" cy="450" r="36" class="marker-bg" />
+                            <circle cx="560" cy="450" r="28" class="marker-inner" />
+                            <text x="560" y="458" class="marker-icon">学</text>
+                            <text x="560" y="505" class="marker-name">百陶会研学基地</text>
+                        </g>
 
-                    <!-- 11: 婺女洲 -->
-                    <g class="map-marker" data-location="wunvzhou">
-                        <circle cx="620" cy="160" r="36" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
-                            <animate attributeName="r" values="32;40;32" dur="1.8s" repeatCount="indefinite"/>
-                            <animate attributeName="opacity" values="0.2;0.5;0.2" dur="1.8s" repeatCount="indefinite"/>
-                        </circle>
-                        <circle cx="620" cy="160" r="28" class="marker-bg" />
-                        <circle cx="620" cy="160" r="22" class="marker-inner" />
-                        <text x="620" y="167" class="marker-icon">洲</text>
-                        <text x="620" y="205" class="marker-name">婺女洲</text>
-                    </g>
+                        <!-- 11: 婺女洲 -->
+                        <g class="map-marker" data-location="wunvzhou">
+                            <circle cx="620" cy="360" r="48" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
+                                <animate attributeName="r" values="43;53;43" dur="1.8s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" values="0.2;0.5;0.2" dur="1.8s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="620" cy="360" r="36" class="marker-bg" />
+                            <circle cx="620" cy="360" r="28" class="marker-inner" />
+                            <text x="620" y="368" class="marker-icon">洲</text>
+                            <text x="620" y="415" class="marker-name">婺女洲</text>
+                        </g>
 
-                    <!-- 12: 篁岭（终点） -->
-                    <g class="map-marker end-point" data-location="huangling">
-                        <circle cx="660" cy="100" r="45" fill="rgba(212, 175, 55, 0.12)" filter="url(#strongGlow)">
-                            <animate attributeName="r" values="38;50;38" dur="1.5s" repeatCount="indefinite"/>
-                            <animate attributeName="opacity" values="0.4;0.7;0.4" dur="1.5s" repeatCount="indefinite"/>
-                        </circle>
-                        <circle cx="660" cy="100" r="32" class="marker-bg" />
-                        <circle cx="660" cy="100" r="24" class="marker-inner" />
-                        <text x="660" y="108" class="marker-icon">村</text>
-                        <text x="660" y="150" class="marker-name">篁岭</text>
-                    </g>
+                        <!-- 12: 篁岭（终点） -->
+                        <g class="map-marker end-point" data-location="huangling">
+                            <circle cx="660" cy="280" r="60" fill="rgba(212, 175, 55, 0.12)" filter="url(#strongGlow)">
+                                <animate attributeName="r" values="55;65;55" dur="1.5s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" values="0.4;0.7;0.4" dur="1.5s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="660" cy="280" r="45" class="marker-bg" />
+                            <circle cx="660" cy="280" r="33" class="marker-inner" />
+                            <text x="660" y="288" class="marker-icon">村</text>
+                            <text x="660" y="335" class="marker-name">篁岭</text>
+                        </g>
 
-                </svg>
+                    </svg>
+                </div>
+
+                <!-- 滑动提示 -->
+                <div class="scroll-hint">
+                    <span>↑ 向上滑动查看更多 ↑</span>
+                </div>
 
                 <!-- 图例说明 -->
                 <div class="map-legend">
@@ -235,11 +242,7 @@
                     </div>
                     <div class="legend-item">
                         <span class="legend-icon"></span>
-                        <span>第2站 - 滕王阁</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-icon"></span>
-                        <span>第3站 - 八一起义纪念馆</span>
+                        <span>途经站点</span>
                     </div>
                     <div class="legend-item">
                         <span class="legend-icon end"></span>
