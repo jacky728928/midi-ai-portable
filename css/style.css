@@ -184,7 +184,7 @@ body {
 /* ========== 加载进度条样式 - 黑金风格 ========== */
 .loading-container {
     margin-top: 2rem;
-    padding: 2.5rem;
+    padding: 2rem;
     background: rgba(20, 20, 20, 0.95);
     border-radius: 20px;
     border: 2px solid #d4af37;
@@ -196,6 +196,8 @@ body {
     visibility: hidden;
     transition: opacity 0.5s ease, visibility 0.5s ease;
     transform: translateY(20px);
+    max-width: 90vw;
+    width: 100%;
 }
 
 .loading-container.active {
@@ -207,7 +209,7 @@ body {
 .loading-text {
     font-size: 1.3rem;
     font-weight: 600;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     color: #d4af37;
     letter-spacing: 0.15em;
     text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
@@ -216,12 +218,15 @@ body {
 .progress-bar-wrapper {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1.5rem;
     margin-bottom: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .progress-bar {
-    width: 350px;
+    width: 100%;
+    max-width: 350px;
     height: 12px;
     background: rgba(50, 50, 50, 0.8);
     border-radius: 10px;
@@ -793,9 +798,16 @@ body {
     }
 
     /* 进度条响应式 */
-    .progress-bar {
-        width: 250px;
-        height: 10px;
+    .loading-container {
+        padding: 1.5rem;
+        margin: 1rem auto;
+        max-width: 85vw;
+    }
+
+    .loading-text {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        letter-spacing: 0.1em;
     }
 
     .progress-bar-wrapper {
@@ -803,33 +815,68 @@ body {
         gap: 1rem;
     }
 
-    .loading-container {
-        padding: 1.5rem;
-        margin: 1rem;
-    }
-
-    .loading-text {
-        font-size: 1.1rem;
+    .progress-bar {
+        width: 100%;
+        max-width: 280px;
+        height: 10px;
     }
 
     .progress-percent {
         font-size: 1rem;
+        min-width: 50px;
+    }
+
+    .loading-tips {
+        font-size: 0.9rem;
     }
 }
 
 @media (max-width: 480px) {
     .welcome-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        letter-spacing: 0.08em;
+    }
+
+    .welcome-title::before,
+    .welcome-title::after {
+        content: '═══';
+        font-size: 0.7rem;
     }
 
     .welcome-subtitle {
-        font-size: 1rem;
+        font-size: 0.9rem;
+        letter-spacing: 0.15em;
         padding: 0 1rem;
     }
 
     .welcome-hint span {
         padding: 0.8rem 1.5rem;
         font-size: 0.9rem;
+    }
+
+    /* 进度条超小屏幕优化 */
+    .loading-container {
+        padding: 1.2rem;
+        margin: 0.5rem auto;
+        max-width: 90vw;
+    }
+
+    .loading-text {
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .progress-bar {
+        max-width: 100%;
+        height: 8px;
+    }
+
+    .progress-percent {
+        font-size: 0.9rem;
+    }
+
+    .loading-tips {
+        font-size: 0.85rem;
     }
 
     .treasure-header {
