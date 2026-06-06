@@ -11,9 +11,20 @@
         <div class="welcome-content">
             <h1 class="welcome-title">研学江西</h1>
             <p class="welcome-subtitle">探索赣鄱大地的文化与历史</p>
-            <div class="welcome-hint">
+            <div class="welcome-hint" id="welcomeHint">
                 <span>点击屏幕开始探索</span>
                 <div class="ripple"></div>
+            </div>
+            <!-- 加载进度条 -->
+            <div class="loading-container" id="loadingContainer" style="display: none;">
+                <div class="loading-text">正在加载探索之旅...</div>
+                <div class="progress-bar-wrapper">
+                    <div class="progress-bar" id="progressBar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-percent" id="progressPercent">0%</div>
+                </div>
+                <div class="loading-tips" id="loadingTips">准备开启赣鄱文化之旅</div>
             </div>
         </div>
     </div>

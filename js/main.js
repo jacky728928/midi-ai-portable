@@ -5,16 +5,84 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ========== 欢迎页面交互逻辑 ==========
     const welcomeScreen = document.getElementById('welcomeScreen');
+    const welcomeHint = document.getElementById('welcomeHint');
+    const loadingContainer = document.getElementById('loadingContainer');
+    const progressFill = document.getElementById('progressFill');
+    const progressPercent = document.getElementById('progressPercent');
+    const loadingTips = document.getElementById('loadingTips');
+    
     if (welcomeScreen) {
         welcomeScreen.addEventListener('click', function() {
-            // 添加淡出动画
-            welcomeScreen.classList.add('fade-out');
-
-            // 等待动画完成后跳转
-            setTimeout(function() {
-                window.location.href = 'map.html';
-            }, 800);
+            // 隐藏点击提示，显示进度条
+            if (welcomeHint) {
+                welcomeHint.style.display = 'none';
+            }
+            if (loadingContainer) {
+                loadingContainer.style.display = 'block';
+            }
+            
+            // 开始加载进度
+            startLoadingProgress();
         });
+    }
+    
+    // 加载进度函数
+    function startLoadingProgress() {
+        let progress = 0;
+        const tips = [
+            '准备开启赣鄱文化之旅',
+            '加载历史遗迹数据...',
+            '整理博物馆展品信息...',
+            '优化地图导航路线...',
+            '准备景点详细介绍...',
+            '加载完成，即将启程！'
+        ];
+        
+        const interval = setInterval(function() {
+            progress += Math.random() * 15 + 5; // 随机增加进度
+            
+            if (progress >= 100) {
+                progress = 100;
+                clearInterval(interval);
+                
+                // 更新进度条和百分比
+                if (progressFill) {
+                    progressFill.style.width = '100%';
+                }
+                if (progressPercent) {
+                    progressPercent.textContent = '100%';
+                }
+                if (loadingTips) {
+                    loadingTips.textContent = tips[tips.length - 1];
+                }
+                
+                // 等待一秒后添加淡出动画并跳转
+                setTimeout(function() {
+                    if (welcomeScreen) {
+                        welcomeScreen.classList.add('fade-out');
+                    }
+                    
+                    // 等待动画完成后跳转
+                    setTimeout(function() {
+                        window.location.href = 'map.html';
+                    }, 800);
+                }, 1000);
+            } else {
+                // 更新进度条和百分比
+                if (progressFill) {
+                    progressFill.style.width = progress + '%';
+                }
+                if (progressPercent) {
+                    progressPercent.textContent = Math.floor(progress) + '%';
+                }
+                
+                // 根据进度更新提示文字
+                const tipIndex = Math.floor(progress / 20);
+                if (loadingTips && tipIndex < tips.length) {
+                    loadingTips.textContent = tips[tipIndex];
+                }
+            }
+        }, 200); // 每200毫秒更新一次
     }
 
     // ========== 藏宝图地图页面交互逻辑 ==========
