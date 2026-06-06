@@ -11,19 +11,34 @@ document.addEventListener('DOMContentLoaded', function() {
     const progressPercent = document.getElementById('progressPercent');
     const loadingTips = document.getElementById('loadingTips');
     
+    console.log('Elements found:', {
+        welcomeScreen: !!welcomeScreen,
+        welcomeHint: !!welcomeHint,
+        loadingContainer: !!loadingContainer,
+        progressFill: !!progressFill,
+        progressPercent: !!progressPercent,
+        loadingTips: !!loadingTips
+    });
+    
     if (welcomeScreen) {
         welcomeScreen.addEventListener('click', function() {
+            console.log('Screen clicked, starting loading...');
+            
             // 隐藏点击提示，显示进度条
             if (welcomeHint) {
                 welcomeHint.style.display = 'none';
+                console.log('Hint hidden');
             }
             if (loadingContainer) {
                 loadingContainer.style.display = 'block';
+                console.log('Loading container shown');
             }
             
             // 开始加载进度
             startLoadingProgress();
         });
+    } else {
+        console.error('Welcome screen not found!');
     }
     
     // 加载进度函数
@@ -38,12 +53,18 @@ document.addEventListener('DOMContentLoaded', function() {
             '加载完成，即将启程！'
         ];
         
+        console.log('Progress started');
+        
         const interval = setInterval(function() {
             progress += Math.random() * 15 + 5; // 随机增加进度
+            
+            console.log('Progress:', Math.floor(progress) + '%');
             
             if (progress >= 100) {
                 progress = 100;
                 clearInterval(interval);
+                
+                console.log('Progress complete, redirecting...');
                 
                 // 更新进度条和百分比
                 if (progressFill) {
@@ -64,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     // 等待动画完成后跳转
                     setTimeout(function() {
+                        console.log('Redirecting to map.html');
                         window.location.href = 'map.html';
                     }, 800);
                 }, 1000);
