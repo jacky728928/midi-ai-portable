@@ -14,7 +14,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ========== 欢迎页面样式 ========== */
+/* ========== 欢迎页面样式 - 中国历史风格 ========== */
 .welcome-page {
     margin: 0;
     padding: 0;
@@ -28,12 +28,47 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #1a472a 0%, #2c5f2d 50%, #3a7d44 100%);
+    /* 黑金配色 - 深邃夜空 */
+    background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: opacity 0.8s ease-out;
+    /* 传统纹样装饰 */
+    position: relative;
+}
+
+/* 添加传统纹样背景 */
+.welcome-container::before {
+    content: '☯ ◈ ☯ ◈ ☯ ◈ ☯ ◈ ☯ ◈ ☯ ◈';
+    position: absolute;
+    top: 5%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 1.5rem;
+    color: rgba(212, 175, 55, 0.08);
+    letter-spacing: 2rem;
+    animation: patternFloat 20s linear infinite;
+}
+
+.welcome-container::after {
+    content: '☯ ◈ ☯ ◈ ☯ ◈ ☯ ◈ ☯ ◈ ☯ ◈';
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 1.5rem;
+    color: rgba(212, 175, 55, 0.08);
+    letter-spacing: 2rem;
+    animation: patternFloat 20s linear infinite reverse;
+}
+
+@keyframes patternFloat {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 .welcome-container.fade-out {
@@ -45,51 +80,94 @@ body {
     text-align: center;
     color: white;
     z-index: 10;
+    position: relative;
 }
 
+/* 标题装饰框 */
 .welcome-title {
     font-size: 5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    letter-spacing: 0.1em;
-    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
-    animation: fadeInUp 1s ease-out;
+    letter-spacing: 0.15em;
+    color: #d4af37;
+    text-shadow: 
+        0 0 20px rgba(212, 175, 55, 0.5),
+        0 0 40px rgba(212, 175, 55, 0.3),
+        0 0 60px rgba(212, 175, 55, 0.2);
+    animation: fadeInUp 1.5s ease-out, goldenGlow 3s ease-in-out infinite;
+    position: relative;
+    padding: 0 2rem;
+}
+
+/* 标题装饰线 */
+.welcome-title::before,
+.welcome-title::after {
+    content: '═══════════';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: rgba(212, 175, 55, 0.6);
+    letter-spacing: 0;
+}
+
+.welcome-title::before {
+    right: 100%;
+    margin-right: 1rem;
+}
+
+.welcome-title::after {
+    left: 100%;
+    margin-left: 1rem;
+}
+
+@keyframes goldenGlow {
+    0%, 100% { 
+        text-shadow: 
+            0 0 20px rgba(212, 175, 55, 0.5),
+            0 0 40px rgba(212, 175, 55, 0.3);
+    }
+    50% { 
+        text-shadow: 
+            0 0 30px rgba(212, 175, 55, 0.7),
+            0 0 60px rgba(212, 175, 55, 0.5);
+    }
 }
 
 .welcome-subtitle {
     font-size: 1.5rem;
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 3rem;
-    opacity: 0.9;
-    animation: fadeInUp 1s ease-out 0.3s backwards;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 0.3em;
+    animation: fadeInUp 1.5s ease-out 0.3s backwards;
 }
 
 .welcome-hint {
     position: relative;
     font-size: 1.1rem;
-    opacity: 0.8;
-    animation: fadeInUp 1s ease-out 0.6s backwards;
+    animation: fadeInUp 1.5s ease-out 0.6s backwards;
 }
 
 .welcome-hint span {
     display: inline-block;
-    padding: 1rem 2rem;
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 1rem 2.5rem;
+    border: 2px solid #d4af37;
     border-radius: 50px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    background: rgba(212, 175, 55, 0.1);
+    color: #d4af37;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+}
+
+.welcome-hint span:hover {
+    background: rgba(212, 175, 55, 0.2);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
 }
 
 .ripple {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100px;
-    height: 100px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    animation: ripple 2s infinite;
+    display: none; /* 隐藏原有的ripple效果 */
 }
 
 @keyframes fadeInUp {
@@ -103,27 +181,16 @@ body {
     }
 }
 
-@keyframes ripple {
-    0% {
-        width: 100px;
-        height: 100px;
-        opacity: 0.5;
-    }
-    100% {
-        width: 200px;
-        height: 200px;
-        opacity: 0;
-    }
-}
-
-/* ========== 加载进度条样式 ========== */
+/* ========== 加载进度条样式 - 黑金风格 ========== */
 .loading-container {
     margin-top: 2rem;
-    padding: 2rem;
-    background: rgba(0, 0, 0, 0.3);
+    padding: 2.5rem;
+    background: rgba(20, 20, 20, 0.95);
     border-radius: 20px;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid #d4af37;
+    box-shadow: 
+        0 0 30px rgba(212, 175, 55, 0.2),
+        inset 0 0 30px rgba(0, 0, 0, 0.5);
     animation: fadeInUp 0.5s ease-out;
     opacity: 0;
     visibility: hidden;
@@ -138,74 +205,74 @@ body {
 }
 
 .loading-text {
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-    opacity: 0.9;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #d4af37;
+    letter-spacing: 0.15em;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
 }
 
 .progress-bar-wrapper {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .progress-bar {
-    width: 300px;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.2);
+    width: 350px;
+    height: 12px;
+    background: rgba(50, 50, 50, 0.8);
     border-radius: 10px;
     overflow: hidden;
     position: relative;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .progress-fill {
     height: 100%;
     width: 0%;
-    background: linear-gradient(90deg, #feca57 0%, #ff6b6b 50%, #48dbfb 100%);
+    background: linear-gradient(90deg, 
+        #d4af37 0%, 
+        #ffd700 25%, 
+        #d4af37 50%, 
+        #ffd700 75%, 
+        #d4af37 100%);
+    background-size: 200% 100%;
     border-radius: 10px;
     transition: width 0.3s ease-out;
     position: relative;
-    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.4);
-}
-
-.progress-fill::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(90deg, 
-        transparent 0%, 
-        rgba(255, 255, 255, 0.4) 50%, 
-        transparent 100%);
-    animation: shimmer 1.5s infinite;
+    box-shadow: 
+        0 0 10px rgba(212, 175, 55, 0.5),
+        0 0 20px rgba(212, 175, 55, 0.3);
+    animation: shimmer 2s linear infinite;
 }
 
 @keyframes shimmer {
     0% {
-        transform: translateX(-100%);
+        background-position: 200% 0;
     }
     100% {
-        transform: translateX(100%);
+        background-position: -200% 0;
     }
 }
 
 .progress-percent {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #feca57;
-    min-width: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #d4af37;
+    min-width: 60px;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
 }
 
 .loading-tips {
-    font-size: 0.9rem;
-    opacity: 0.7;
-    font-style: italic;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.1em;
     animation: fadeInUp 0.5s ease-out;
+    font-style: normal;
 }
 
 /* ========== 藏宝图页面样式 ========== */
