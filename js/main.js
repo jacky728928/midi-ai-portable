@@ -1,8 +1,6 @@
 // 研学江西 - 主JavaScript文件
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('研学江西网站已加载');
-
     // ========== 欢迎页面交互逻辑 ==========
     const welcomeScreen = document.getElementById('welcomeScreen');
     const welcomeHint = document.getElementById('welcomeHint');
@@ -11,34 +9,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const progressPercent = document.getElementById('progressPercent');
     const loadingTips = document.getElementById('loadingTips');
     
-    console.log('Elements found:', {
-        welcomeScreen: !!welcomeScreen,
-        welcomeHint: !!welcomeHint,
-        loadingContainer: !!loadingContainer,
-        progressFill: !!progressFill,
-        progressPercent: !!progressPercent,
-        loadingTips: !!loadingTips
-    });
-    
-    if (welcomeScreen) {
+    if (welcomeScreen && loadingContainer) {
         welcomeScreen.addEventListener('click', function() {
-            console.log('Screen clicked, starting loading...');
-            
-            // 隐藏点击提示，显示进度条
+            // 隐藏点击提示
             if (welcomeHint) {
-                welcomeHint.style.display = 'none';
-                console.log('Hint hidden');
+                welcomeHint.style.opacity = '0';
+                welcomeHint.style.pointerEvents = 'none';
             }
-            if (loadingContainer) {
-                loadingContainer.style.display = 'block';
-                console.log('Loading container shown');
-            }
+            
+            // 显示进度条
+            loadingContainer.classList.add('active');
             
             // 开始加载进度
             startLoadingProgress();
         });
-    } else {
-        console.error('Welcome screen not found!');
     }
     
     // 加载进度函数
@@ -53,18 +37,14 @@ document.addEventListener('DOMContentLoaded', function() {
             '加载完成，即将启程！'
         ];
         
-        console.log('Progress started');
-        
+        // 使用更快的更新频率，让进度更明显
         const interval = setInterval(function() {
-            progress += Math.random() * 15 + 5; // 随机增加进度
-            
-            console.log('Progress:', Math.floor(progress) + '%');
+            // 每次增加5-15%的进度
+            progress += 5 + Math.random() * 10;
             
             if (progress >= 100) {
                 progress = 100;
                 clearInterval(interval);
-                
-                console.log('Progress complete, redirecting...');
                 
                 // 更新进度条和百分比
                 if (progressFill) {
@@ -77,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     loadingTips.textContent = tips[tips.length - 1];
                 }
                 
-                // 等待一秒后添加淡出动画并跳转
+                // 等待1.5秒后添加淡出动画并跳转
                 setTimeout(function() {
                     if (welcomeScreen) {
                         welcomeScreen.classList.add('fade-out');
@@ -85,10 +65,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     // 等待动画完成后跳转
                     setTimeout(function() {
-                        console.log('Redirecting to map.html');
                         window.location.href = 'map.html';
                     }, 800);
-                }, 1000);
+                }, 1500);
             } else {
                 // 更新进度条和百分比
                 if (progressFill) {
@@ -99,12 +78,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 
                 // 根据进度更新提示文字
-                const tipIndex = Math.floor(progress / 20);
-                if (loadingTips && tipIndex < tips.length) {
+                const tipIndex = Math.min(Math.floor(progress / 20), tips.length - 1);
+                if (loadingTips) {
                     loadingTips.textContent = tips[tipIndex];
                 }
             }
-        }, 200); // 每200毫秒更新一次
+        }, 300); // 每300毫秒更新一次
     }
 
     // ========== 藏宝图地图页面交互逻辑 ==========

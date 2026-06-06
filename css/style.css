@@ -120,6 +120,14 @@ body {
 .loading-container {
     margin-top: 2rem;
     animation: fadeInUp 0.5s ease-out;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.loading-container.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 .loading-text {
