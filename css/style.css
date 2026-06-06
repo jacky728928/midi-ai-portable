@@ -496,7 +496,7 @@ body {
 }
 
 .marker-icon {
-    font-size: 24px;
+    font-size: 48px;
     font-weight: 800;
     fill: #0a0a0a;
     text-anchor: middle;
@@ -506,7 +506,7 @@ body {
 }
 
 .marker-name {
-    font-size: 18px;
+    font-size: 32px;
     font-weight: 600;
     fill: #d4af37;
     text-anchor: middle;
@@ -547,7 +547,7 @@ body {
 
 .map-marker.end-point .marker-icon {
     fill: #0a0a0a;
-    font-size: 28px;
+    font-size: 56px;
 }
 
 .map-marker.end-point:hover .marker-bg {
@@ -871,11 +871,11 @@ body {
 
     /* 地图图标字体调整 */
     .marker-icon {
-        font-size: 20px;
+        font-size: 40px;
     }
 
     .marker-name {
-        font-size: 16px;
+        font-size: 26px;
     }
 }
 
@@ -941,10 +941,10 @@ body {
 
     /* 地图图标字体进一步调整 */
     .marker-icon {
-        font-size: 18px;
+        font-size: 36px;
     }
 
     .marker-name {
-        font-size: 14px;
+        font-size: 22px;
     }
 }
