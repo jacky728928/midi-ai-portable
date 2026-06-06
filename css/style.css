@@ -275,19 +275,19 @@ body {
     font-style: normal;
 }
 
-/* ========== 藏宝图页面样式 ========== */
+/* ========== 藏宝图页面样式 - 中国历史风格 ========== */
 .treasure-map-page {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f64f59 100%);
+    background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
     min-height: 100vh;
 }
 
 .treasure-header {
-    background: linear-gradient(135deg, #ff6b6b 0%, #feca57 50%, #48dbfb 100%);
-    color: white;
+    background: linear-gradient(180deg, #1a1a1a 0%, #2a2a2a 100%);
+    color: #d4af37;
     padding: 2.5rem 2rem;
     text-align: center;
-    box-shadow: 0 8px 32px rgba(255, 107, 107, 0.5), inset 0 -4px 0 rgba(0, 0, 0, 0.2);
-    border-bottom: none;
+    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.3), inset 0 -4px 0 rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid #d4af37;
     position: relative;
     overflow: hidden;
 }
@@ -299,26 +299,29 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.25) 0%, transparent 40%);
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
     pointer-events: none;
 }
 
 .treasure-header h1 {
     font-size: 3.2rem;
-    font-weight: 800;
+    font-weight: 700;
     margin-bottom: 0.6rem;
-    letter-spacing: 0.12em;
-    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 40px rgba(102, 126, 234, 0.3);
+    letter-spacing: 0.2em;
+    color: #d4af37;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.5), 0 0 40px rgba(212, 175, 55, 0.3);
     position: relative;
     z-index: 1;
 }
 
 .header-subtitle {
     font-size: 1.25rem;
-    opacity: 1;
-    font-weight: 500;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     position: relative;
     z-index: 1;
 }
@@ -329,17 +332,18 @@ body {
     padding: 0 1.5rem;
 }
 
-/* 藏宝图整体样式 */
+/* 藏宝图整体样式 - 中国历史风格 */
 .treasure-map {
-    background: linear-gradient(145deg, #2d1b69 0%, #11998e 50%, #38ef7d 100%);
+    background: linear-gradient(145deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
     border-radius: 24px;
     padding: 2.5rem;
     position: relative;
     box-shadow:
-        0 20px 60px rgba(102, 126, 234, 0.6),
-        0 0 0 4px rgba(255, 255, 255, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        0 20px 60px rgba(0, 0, 0, 0.8),
+        0 0 0 4px #d4af37,
+        0 0 30px rgba(212, 175, 55, 0.2);
     overflow: hidden;
+    border: 4px solid #d4af37;
 }
 
 .treasure-map::before {
@@ -350,8 +354,8 @@ body {
     right: 0;
     bottom: 0;
     background-image: 
-        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
+        radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -361,11 +365,11 @@ body {
     left: 12px;
     right: 12px;
     bottom: 12px;
-    border: 2px solid rgba(99, 102, 241, 0.3);
+    border: 2px solid rgba(212, 175, 55, 0.4);
     border-radius: 16px;
     pointer-events: none;
     opacity: 1;
-    box-shadow: inset 0 0 20px rgba(99, 102, 241, 0.1);
+    box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.1);
 }
 
 .map-content {
@@ -378,25 +382,26 @@ body {
     text-align: center;
     margin-bottom: 2rem;
     padding: 1.5rem;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+    border-bottom: 2px solid rgba(212, 175, 55, 0.5);
+    background: linear-gradient(180deg, rgba(212, 175, 55, 0.15) 0%, transparent 100%);
     border-radius: 12px;
 }
 
 .map-title-area h2 {
     font-size: 2rem;
-    color: #ffffff;
+    color: #d4af37;
     font-weight: 700;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.15em;
     margin-bottom: 0.6rem;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
 }
 
 .map-title-area p {
     font-size: 1.05rem;
-    color: #f8f9fa;
+    color: rgba(255, 255, 255, 0.7);
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
+    letter-spacing: 0.05em;
 }
 
 /* SVG路线图 */
@@ -404,7 +409,7 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
 }
 
 /* 路线路径 */
@@ -415,7 +420,7 @@ body {
     stroke-dasharray: 25, 15;
     stroke-linecap: round;
     animation: dash 25s linear infinite;
-    filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.4));
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.5));
 }
 
 @keyframes dash {
@@ -435,40 +440,40 @@ body {
 }
 
 .map-marker:hover .marker-bg {
-    fill: #ff6b6b;
-    filter: drop-shadow(0 0 25px rgba(255, 107, 107, 0.9));
+    fill: #ffd700;
+    filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.9));
 }
 
 .map-marker:hover .marker-inner {
-    fill: #feca57;
+    fill: #d4af37;
 }
 
 .map-marker:hover .marker-icon {
-    fill: #ffffff;
+    fill: #0a0a0a;
 }
 
 .map-marker:hover .marker-name {
-    fill: #ffffff;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    fill: #ffd700;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
 }
 
 .marker-bg {
-    fill: #667eea;
-    stroke: #ffffff;
+    fill: #d4af37;
+    stroke: #ffd700;
     stroke-width: 4;
     transition: all 0.4s ease;
-    filter: drop-shadow(0 4px 8px rgba(102, 126, 234, 0.6));
+    filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.6));
 }
 
 .marker-inner {
-    fill: #764ba2;
+    fill: #ffd700;
     transition: all 0.4s ease;
 }
 
 .marker-icon {
     font-size: 18px;
     font-weight: 800;
-    fill: #ffffff;
+    fill: #0a0a0a;
     text-anchor: middle;
     dominant-baseline: middle;
     font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
@@ -478,7 +483,7 @@ body {
 .marker-name {
     font-size: 14px;
     font-weight: 600;
-    fill: #ffffff;
+    fill: #d4af37;
     text-anchor: middle;
     font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
     transition: all 0.4s ease;
@@ -486,43 +491,43 @@ body {
 
 /* 起点标记样式 */
 .map-marker.start-point .marker-bg {
-    fill: #10b981;
-    stroke: #34d399;
-    filter: drop-shadow(0 4px 12px rgba(16, 185, 129, 0.6));
+    fill: #d4af37;
+    stroke: #ffd700;
+    filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.6));
 }
 
 .map-marker.start-point .marker-inner {
-    fill: #34d399;
+    fill: #ffd700;
 }
 
 .map-marker.start-point .marker-icon {
-    fill: #ecfdf5;
+    fill: #0a0a0a;
 }
 
 .map-marker.start-point:hover .marker-bg {
-    fill: #059669;
-    filter: drop-shadow(0 0 25px rgba(16, 185, 129, 0.9));
+    fill: #ffd700;
+    filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.9));
 }
 
 /* 终点标记样式 */
 .map-marker.end-point .marker-bg {
-    fill: #f59e0b;
-    stroke: #fbbf24;
-    filter: drop-shadow(0 4px 12px rgba(245, 158, 11, 0.6));
+    fill: #d4af37;
+    stroke: #ffd700;
+    filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.6));
 }
 
 .map-marker.end-point .marker-inner {
-    fill: #fbbf24;
+    fill: #ffd700;
 }
 
 .map-marker.end-point .marker-icon {
-    fill: #fef3c7;
+    fill: #0a0a0a;
     font-size: 20px;
 }
 
 .map-marker.end-point:hover .marker-bg {
-    fill: #d97706;
-    filter: drop-shadow(0 0 25px rgba(245, 158, 11, 0.9));
+    fill: #ffd700;
+    filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.9));
 }
 
 /* 图例 */
@@ -533,64 +538,67 @@ body {
     gap: 1.5rem;
     margin-top: 2rem;
     padding-top: 1.5rem;
-    border-top: 2px solid rgba(255, 255, 255, 0.4);
+    border-top: 2px solid rgba(212, 175, 55, 0.5);
 }
 
 .legend-item {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    color: #ffffff;
+    color: #d4af37;
     font-size: 0.95rem;
     padding: 0.5rem 1rem;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(212, 175, 55, 0.1);
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(212, 175, 55, 0.3);
     transition: all 0.3s ease;
 }
 
 .legend-item:hover {
-    background: rgba(255, 255, 255, 0.35);
+    background: rgba(212, 175, 55, 0.2);
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
 }
 
 .legend-icon {
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    background: #667eea;
-    border: 2px solid #ffffff;
-    box-shadow: 0 0 15px rgba(102, 126, 234, 0.7);
+    background: #d4af37;
+    border: 2px solid #ffd700;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
 }
 
 .legend-icon.start {
-    background: #11998e;
-    border-color: #ffffff;
-    box-shadow: 0 0 15px rgba(17, 153, 142, 0.7);
+    background: #d4af37;
+    border-color: #ffd700;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
 }
 
 .legend-icon.end {
-    background: #feca57;
-    border-color: #ffffff;
-    box-shadow: 0 0 15px rgba(254, 202, 87, 0.7);
+    background: #d4af37;
+    border-color: #ffd700;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
 }
 
 /* ========== 地点详情页面样式 ========== */
+/* ========== 地点详情页面样式 - 中国历史风格 ========== */
 .location-page {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f64f59 100%);
+    background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
     min-height: 100vh;
 }
 
 .location-header {
-    background: linear-gradient(135deg, #ff6b6b 0%, #feca57 50%, #48dbfb 100%);
-    color: white;
+    background: linear-gradient(180deg, #1a1a1a 0%, #2a2a2a 100%);
+    color: #d4af37;
     padding: 1.5rem 2rem;
     display: flex;
     align-items: center;
     gap: 2rem;
-    box-shadow: 0 8px 32px rgba(255, 107, 107, 0.4);
+    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.3);
     position: relative;
     overflow: hidden;
+    border-bottom: 2px solid #d4af37;
 }
 
 .location-header::before {
@@ -600,40 +608,39 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.15) 0%, transparent 40%);
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
     pointer-events: none;
 }
 
 .back-btn {
-    color: white;
+    color: #d4af37;
     text-decoration: none;
     font-size: 1rem;
     padding: 0.6rem 1.2rem;
-    border: 2px solid rgba(255, 255, 255, 0.6);
+    border: 2px solid #d4af37;
     border-radius: 30px;
     transition: all 0.3s ease;
     white-space: nowrap;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
+    background: rgba(212, 175, 55, 0.1);
     position: relative;
     z-index: 1;
 }
 
 .back-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
-    border-color: white;
+    background: rgba(212, 175, 55, 0.2);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
 }
 
 .location-header h1 {
     font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.1em;
     position: relative;
     z-index: 1;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
 }
 
 .location-content {
@@ -646,7 +653,7 @@ body {
     width: 100%;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 0 3px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 0 3px #d4af37;
     margin-bottom: 2.5rem;
     position: relative;
 }
@@ -658,7 +665,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.1) 100%);
     pointer-events: none;
     z-index: 1;
 }
@@ -675,44 +682,53 @@ body {
 }
 
 .location-info {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(20, 20, 20, 0.95);
     padding: 2.5rem;
     border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2), 0 0 0 2px rgba(255, 255, 255, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 0 2px #d4af37;
+    border: 2px solid #d4af37;
 }
 
 .location-info h2 {
     font-size: 1.8rem;
-    color: #2d1b69;
+    color: #d4af37;
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
-    border-bottom: 3px solid #667eea;
-    text-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+    border-bottom: 3px solid #d4af37;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
 }
 
 .location-info p {
     font-size: 1.1rem;
     line-height: 1.9;
-    color: #4a4a6a;
+    color: rgba(255, 255, 255, 0.85);
 }
 
 /* ========== 响应式设计 ========== */
 @media (max-width: 768px) {
     .welcome-title {
-        font-size: 3rem;
+        font-size: 2.5rem;
+        letter-spacing: 0.1em;
+    }
+
+    .welcome-title::before,
+    .welcome-title::after {
+        content: '══════';
+        font-size: 0.8rem;
     }
 
     .welcome-subtitle {
-        font-size: 1.2rem;
+        font-size: 1rem;
+        letter-spacing: 0.2em;
     }
 
     .treasure-header h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .treasure-map {
         padding: 1rem;
+        border-width: 3px;
     }
 
     .map-border {
@@ -752,6 +768,7 @@ body {
 
     .location-header h1 {
         font-size: 1.5rem;
+        letter-spacing: 0.05em;
     }
 
     .location-content {
@@ -773,6 +790,30 @@ body {
 
     .location-image {
         border-radius: 16px;
+    }
+
+    /* 进度条响应式 */
+    .progress-bar {
+        width: 250px;
+        height: 10px;
+    }
+
+    .progress-bar-wrapper {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .loading-container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .loading-text {
+        font-size: 1.1rem;
+    }
+
+    .progress-percent {
+        font-size: 1rem;
     }
 }
 
