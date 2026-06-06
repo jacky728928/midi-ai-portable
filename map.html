@@ -32,9 +32,9 @@
                     <!-- 定义渐变 -->
                     <defs>
                         <linearGradient id="routeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#8b5cf6;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+                            <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#ffd700;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#d4af37;stop-opacity:1" />
                         </linearGradient>
                         <filter id="glow">
                             <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
@@ -52,37 +52,17 @@
                         </filter>
                     </defs>
 
-                    <!-- 装饰性星星背景 -->
-                    <circle cx="100" cy="200" r="2" fill="rgba(99, 102, 241, 0.4)">
-                        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="700" cy="150" r="1.5" fill="rgba(139, 92, 246, 0.5)">
-                        <animate attributeName="opacity" values="0.2;0.7;0.2" dur="2.5s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="150" cy="400" r="2" fill="rgba(168, 85, 247, 0.4)">
-                        <animate attributeName="opacity" values="0.4;0.9;0.4" dur="1.8s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="650" cy="350" r="1.5" fill="rgba(99, 102, 241, 0.5)">
-                        <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2.2s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="120" cy="600" r="2" fill="rgba(139, 92, 246, 0.4)">
-                        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.3s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="680" cy="550" r="1.5" fill="rgba(168, 85, 247, 0.5)">
-                        <animate attributeName="opacity" values="0.2;0.7;0.2" dur="1.9s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="100" cy="800" r="2" fill="rgba(99, 102, 241, 0.4)">
-                        <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2.1s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="720" cy="750" r="1.5" fill="rgba(139, 92, 246, 0.5)">
-                        <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2.4s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="140" cy="1000" r="2" fill="rgba(168, 85, 247, 0.4)">
-                        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="660" cy="950" r="1.5" fill="rgba(99, 102, 241, 0.5)">
-                        <animate attributeName="opacity" values="0.2;0.7;0.2" dur="2.6s" repeatCount="indefinite"/>
-                    </circle>
+                    <!-- 装饰性传统纹样背景 -->
+                    <text x="100" y="200" fill="rgba(212, 175, 55, 0.15)" font-size="20">◈</text>
+                    <text x="700" y="150" fill="rgba(212, 175, 55, 0.12)" font-size="18">☯</text>
+                    <text x="150" y="400" fill="rgba(212, 175, 55, 0.15)" font-size="20">◈</text>
+                    <text x="650" y="350" fill="rgba(212, 175, 55, 0.12)" font-size="18">☯</text>
+                    <text x="120" y="600" fill="rgba(212, 175, 55, 0.15)" font-size="20">◈</text>
+                    <text x="680" y="550" fill="rgba(212, 175, 55, 0.12)" font-size="18">☯</text>
+                    <text x="100" y="800" fill="rgba(212, 175, 55, 0.15)" font-size="20">◈</text>
+                    <text x="720" y="750" fill="rgba(212, 175, 55, 0.12)" font-size="18">☯</text>
+                    <text x="140" y="1000" fill="rgba(212, 175, 55, 0.15)" font-size="20">◈</text>
+                    <text x="660" y="950" fill="rgba(212, 175, 55, 0.12)" font-size="18">☯</text>
 
                     <!-- 路线路径（虚线） - 使用L直线连接每个地点 -->
                     <path class="route-path" d="
@@ -103,7 +83,7 @@
                     <!-- 地点标记 -->
                     <!-- 1: 南昌西站（起点） -->
                     <g class="map-marker start-point" data-location="nanchangxizhan">
-                        <circle cx="400" cy="1100" r="45" fill="rgba(16, 185, 129, 0.1)" filter="url(#glow)">
+                        <circle cx="400" cy="1100" r="45" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
                             <animate attributeName="r" values="40;50;40" dur="2s" repeatCount="indefinite"/>
                             <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite"/>
                         </circle>
@@ -115,7 +95,7 @@
 
                     <!-- 2: 滕王阁 -->
                     <g class="map-marker" data-location="tengwangge">
-                        <circle cx="250" cy="1000" r="36" fill="rgba(99, 102, 241, 0.1)" filter="url(#glow)">
+                        <circle cx="250" cy="1000" r="36" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
                             <animate attributeName="r" values="32;40;32" dur="2.2s" repeatCount="indefinite"/>
                             <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2.2s" repeatCount="indefinite"/>
                         </circle>
@@ -127,7 +107,7 @@
 
                     <!-- 3: 八一起义纪念馆 -->
                     <g class="map-marker" data-location="bayiqiyijinianguan">
-                        <circle cx="350" cy="900" r="36" fill="rgba(99, 102, 241, 0.1)" filter="url(#glow)">
+                        <circle cx="350" cy="900" r="36" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
                             <animate attributeName="r" values="32;40;32" dur="1.8s" repeatCount="indefinite"/>
                             <animate attributeName="opacity" values="0.2;0.5;0.2" dur="1.8s" repeatCount="indefinite"/>
                         </circle>
@@ -139,7 +119,7 @@
 
                     <!-- 4: 万寿宫街区 -->
                     <g class="map-marker" data-location="wanshougong">
-                        <circle cx="180" cy="800" r="36" fill="rgba(99, 102, 241, 0.1)" filter="url(#glow)">
+                        <circle cx="180" cy="800" r="36" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
                             <animate attributeName="r" values="32;40;32" dur="2.4s" repeatCount="indefinite"/>
                             <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2.4s" repeatCount="indefinite"/>
                         </circle>
@@ -151,7 +131,7 @@
 
                     <!-- 5: 海昏侯国遗址公园 -->
                     <g class="map-marker" data-location="haihunhouguo">
-                        <circle cx="230" cy="700" r="36" fill="rgba(99, 102, 241, 0.1)" filter="url(#glow)">
+                        <circle cx="230" cy="700" r="36" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
                             <animate attributeName="r" values="32;40;32" dur="2s" repeatCount="indefinite"/>
                             <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2s" repeatCount="indefinite"/>
                         </circle>
@@ -163,7 +143,7 @@
 
                     <!-- 6: 庐山 -->
                     <g class="map-marker" data-location="lushan">
-                        <circle cx="270" cy="600" r="36" fill="rgba(99, 102, 241, 0.1)" filter="url(#glow)">
+                        <circle cx="270" cy="600" r="36" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
                             <animate attributeName="r" values="32;40;32" dur="2.1s" repeatCount="indefinite"/>
                             <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2.1s" repeatCount="indefinite"/>
                         </circle>
@@ -175,7 +155,7 @@
 
                     <!-- 7: 白鹿洞书院 -->
                     <g class="map-marker" data-location="bailudongshuyuan">
-                        <circle cx="340" cy="500" r="36" fill="rgba(99, 102, 241, 0.1)" filter="url(#glow)">
+                        <circle cx="340" cy="500" r="36" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
                             <animate attributeName="r" values="32;40;32" dur="1.9s" repeatCount="indefinite"/>
                             <animate attributeName="opacity" values="0.2;0.5;0.2" dur="1.9s" repeatCount="indefinite"/>
                         </circle>
@@ -187,7 +167,7 @@
 
                     <!-- 8: 景德镇古窑景区 -->
                     <g class="map-marker" data-location="jingdezhen">
-                        <circle cx="420" cy="400" r="36" fill="rgba(99, 102, 241, 0.1)" filter="url(#glow)">
+                        <circle cx="420" cy="400" r="36" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
                             <animate attributeName="r" values="32;40;32" dur="2.3s" repeatCount="indefinite"/>
                             <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2.3s" repeatCount="indefinite"/>
                         </circle>
@@ -199,7 +179,7 @@
 
                     <!-- 9: 陶溪川 -->
                     <g class="map-marker" data-location="taoxichuan">
-                        <circle cx="500" cy="300" r="36" fill="rgba(99, 102, 241, 0.1)" filter="url(#glow)">
+                        <circle cx="500" cy="300" r="36" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
                             <animate attributeName="r" values="32;40;32" dur="1.7s" repeatCount="indefinite"/>
                             <animate attributeName="opacity" values="0.2;0.5;0.2" dur="1.7s" repeatCount="indefinite"/>
                         </circle>
@@ -211,7 +191,7 @@
 
                     <!-- 10: 百陶会研学基地 -->
                     <g class="map-marker" data-location="baitaohui">
-                        <circle cx="560" cy="230" r="36" fill="rgba(99, 102, 241, 0.1)" filter="url(#glow)">
+                        <circle cx="560" cy="230" r="36" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
                             <animate attributeName="r" values="32;40;32" dur="2.5s" repeatCount="indefinite"/>
                             <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2.5s" repeatCount="indefinite"/>
                         </circle>
@@ -223,7 +203,7 @@
 
                     <!-- 11: 婺女洲 -->
                     <g class="map-marker" data-location="wunvzhou">
-                        <circle cx="620" cy="160" r="36" fill="rgba(99, 102, 241, 0.1)" filter="url(#glow)">
+                        <circle cx="620" cy="160" r="36" fill="rgba(212, 175, 55, 0.1)" filter="url(#glow)">
                             <animate attributeName="r" values="32;40;32" dur="1.8s" repeatCount="indefinite"/>
                             <animate attributeName="opacity" values="0.2;0.5;0.2" dur="1.8s" repeatCount="indefinite"/>
                         </circle>
@@ -235,7 +215,7 @@
 
                     <!-- 12: 篁岭（终点） -->
                     <g class="map-marker end-point" data-location="huangling">
-                        <circle cx="660" cy="100" r="45" fill="rgba(245, 158, 11, 0.12)" filter="url(#strongGlow)">
+                        <circle cx="660" cy="100" r="45" fill="rgba(212, 175, 55, 0.12)" filter="url(#strongGlow)">
                             <animate attributeName="r" values="38;50;38" dur="1.5s" repeatCount="indefinite"/>
                             <animate attributeName="opacity" values="0.4;0.7;0.4" dur="1.5s" repeatCount="indefinite"/>
                         </circle>
