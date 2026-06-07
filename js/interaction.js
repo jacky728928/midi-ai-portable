@@ -47,7 +47,6 @@ class LocationInteraction {
         if (this.quizData.length === 0) return;
         
         this.renderQuiz();
-        this.renderQuizProgress();
     }
     
     renderQuiz() {
@@ -115,12 +114,24 @@ class LocationInteraction {
             <p class="quiz-result-text">${isCorrect ? '回答正确！' : '再想想看～'}</p>
             <p class="quiz-result-explanation">${quiz.explanation}</p>
             ${this.currentQuizIndex < this.quizData.length - 1 ? `
-                <button class="quiz-next-btn" onclick="interaction.nextQuiz()">下一题 →</button>
+                <button class="quiz-next-btn" id="next-quiz-btn">下一题 →</button>
             ` : `
-                <button class="quiz-next-btn" onclick="interaction.finishQuiz()">完成挑战 ✓</button>
+                <button class="quiz-next-btn" id="finish-quiz-btn">完成挑战 ✓</button>
             `}
         `;
         resultDiv.style.display = 'block';
+        
+        // 绑定下一题按钮
+        const nextBtn = document.getElementById('next-quiz-btn');
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => this.nextQuiz());
+        }
+        
+        // 绑定完成按钮
+        const finishBtn = document.getElementById('finish-quiz-btn');
+        if (finishBtn) {
+            finishBtn.addEventListener('click', () => this.finishQuiz());
+        }
     }
     
     nextQuiz() {
