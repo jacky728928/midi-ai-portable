@@ -1,0 +1,399 @@
+/* 庐山研学 - 专属样式 */
+
+/* ========== 基础变量 ========== */
+:root {
+    --lushan-green: #2c5f4d;
+    --lushan-light-green: #4a8c75;
+    --mountain-gray: #5a6a6a;
+    --cloud-white: #f0f5f3;
+    --ink-black: #1a1f1e;
+    --warm-ivory: #f7f9f8;
+    --text-dark: #2d3332;
+    --text-light: #6a7372;
+    --accent-gold: #c9a966;
+}
+
+/* ========== 页面基础 ========== */
+.lushan-page {
+    background: var(--warm-ivory);
+    color: var(--text-dark);
+    line-height: 1.8;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+/* ========== 主视觉区域 ========== */
+.lushan-page .hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(135deg, var(--lushan-green) 0%, var(--lushan-light-green) 40%, #689d8a 100%);
+    overflow: hidden;
+}
+
+.lushan-page .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 25% 75%, rgba(255, 255, 255, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 75% 25%, rgba(255, 255, 255, 0.06) 0%, transparent 45%),
+        url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10-5.523 0-10-4.477-10-10s4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10-5.523 0-10-4.477-10-10s4.477-10 10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+.lushan-page .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    max-width: 800px;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.lushan-page .hero-badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+    animation: fadeInUp 1s ease-out 0.2s backwards;
+}
+
+.lushan-page .hero-title {
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    line-height: 1.3;
+    animation: fadeInUp 1s ease-out 0.4s backwards;
+}
+
+.lushan-page .hero-slogan {
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+    margin-bottom: 2rem;
+    letter-spacing: 0.08em;
+    animation: fadeInUp 1s ease-out 0.6s backwards;
+}
+
+.lushan-page .scroll-indicator {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    animation: bounce 2s infinite;
+    z-index: 2;
+}
+
+/* ========== 通用容器 ========== */
+.lushan-page .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ========== 通用展板头部 ========== */
+.lushan-page .panel-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.lushan-page .panel-tag {
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    background: var(--lushan-green);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 30px;
+    letter-spacing: 0.12em;
+    margin-bottom: 1rem;
+}
+
+.lushan-page .panel-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    letter-spacing: 0.08em;
+}
+
+.lushan-page .panel-summary {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--lushan-green);
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(44, 95, 77, 0.05) 0%, rgba(74, 140, 117, 0.08) 100%);
+    border-radius: 12px;
+}
+
+/* ========== 展板1：西线山水 ========== */
+.lushan-page .section-1 {
+    padding: 5rem 0;
+    background: white;
+}
+
+/* ========== 展板2：人文寻踪 ========== */
+.lushan-page .section-2 {
+    padding: 5rem 0;
+    background: var(--cloud-white);
+}
+
+/* ========== 展板3：美庐记忆 ========== */
+.lushan-page .section-3 {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, var(--ink-black) 0%, #2a3332 100%);
+    color: white;
+}
+
+.lushan-page .section-3 .panel-tag {
+    background: var(--accent-gold);
+    color: var(--ink-black);
+}
+
+.lushan-page .section-3 .panel-title {
+    color: white;
+}
+
+/* ========== 景点卡片网格 ========== */
+.lushan-page .spots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.lushan-page .spot-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+}
+
+.lushan-page .spot-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.lushan-page .spot-image-placeholder {
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(135deg, var(--lushan-light-green) 0%, var(--lushan-green) 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lushan-page .spot-image-placeholder::before {
+    content: "📷";
+    font-size: 3rem;
+    opacity: 0.3;
+}
+
+.lushan-page .spot-content {
+    padding: 1.8rem;
+}
+
+.lushan-page .spot-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.05em;
+}
+
+.lushan-page .spot-caption {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* ========== 美庐专区 ========== */
+.lushan-page .meilu-section {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.lushan-page .meilu-image-placeholder {
+    width: 100%;
+    height: 350px;
+    background: linear-gradient(135deg, #4a4a4a 0%, #2d2d2d 100%);
+    border-radius: 16px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lushan-page .meilu-image-placeholder::before {
+    content: "🏛️";
+    font-size: 4rem;
+    opacity: 0.4;
+}
+
+.lushan-page .meilu-content {
+    padding: 1rem;
+}
+
+.lushan-page .meilu-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--accent-gold);
+    margin-bottom: 2rem;
+    letter-spacing: 0.08em;
+}
+
+.lushan-page .meilu-quotes {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.lushan-page .meilu-quote {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--accent-gold);
+}
+
+.lushan-page .section-3 .panel-summary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ========== 页脚 ========== */
+.lushan-page .footer {
+    background: var(--ink-black);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.lushan-page .back-to-map {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    background: var(--lushan-green);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.lushan-page .back-to-map:hover {
+    background: var(--lushan-light-green);
+    transform: translateY(-2px);
+}
+
+.lushan-page .footer-text {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.05em;
+}
+
+/* ========== 动画 ========== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(10px); }
+}
+
+/* ========== 响应式设计 ========== */
+@media (max-width: 768px) {
+    .lushan-page .hero-title {
+        font-size: 2.8rem;
+    }
+
+    .lushan-page .hero-slogan {
+        font-size: 1.2rem;
+    }
+
+    .lushan-page .panel-title {
+        font-size: 2.2rem;
+    }
+
+    .lushan-page .spots-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lushan-page .meilu-section {
+        grid-template-columns: 1fr;
+    }
+
+    .lushan-page .meilu-image-placeholder {
+        height: 250px;
+    }
+
+    .lushan-page .meilu-title {
+        font-size: 1.8rem;
+    }
+
+    .lushan-page .meilu-quote {
+        font-size: 1.1rem;
+    }
+
+    .lushan-page .panel-summary {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .lushan-page .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .lushan-page .hero-slogan {
+        font-size: 1rem;
+    }
+
+    .lushan-page .panel-title {
+        font-size: 1.8rem;
+    }
+
+    .lushan-page .spot-image-placeholder {
+        height: 180px;
+    }
+
+    .lushan-page .spot-name {
+        font-size: 1.2rem;
+    }
+
+    .lushan-page .spot-caption {
+        font-size: 1rem;
+    }
+}
