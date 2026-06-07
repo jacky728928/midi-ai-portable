@@ -1,0 +1,568 @@
+/* 滕王阁研学展板 - 木质古风专属样式 */
+
+/* ========== 基础变量 ========== */
+:root {
+    --twg-wood-dark: #5D4037;
+    --twg-wood-brown: #8B4513;
+    --twg-wood-light: #D2691E;
+    --twg-wood-beige: #FFF8DC;
+    --twg-wood-cream: #FAEBD7;
+    --twg-ivory: #FDF5E6;
+    --twg-gold-dark: #B8860B;
+    --twg-gold-light: #DAA520;
+}
+
+/* ========== 页面基础 ========== */
+.tengwangge-page {
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: linear-gradient(135deg, #F5F0E6 0%, #EAE0D0 100%);
+    min-height: 100vh;
+}
+
+/* ========== 容器布局 ========== */
+.exhibition-board {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+/* ========== 头部标题 ========== */
+.board-header {
+    text-align: center;
+    padding: 40px 30px;
+    background: linear-gradient(135deg, var(--twg-wood-brown) 0%, var(--twg-wood-light) 100%);
+    color: var(--twg-wood-beige);
+    border-radius: 16px 16px 0 0;
+    margin-bottom: 0;
+    box-shadow: 0 4px 20px rgba(93, 64, 55, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.board-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFD700' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+.board-header h1 {
+    font-size: 2.8em;
+    margin: 0 0 12px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: 0.1em;
+    font-weight: 800;
+    position: relative;
+    z-index: 1;
+}
+
+.board-header .subtitle {
+    font-size: 1.3em;
+    opacity: 0.95;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+}
+
+/* ========== 四板块网格 ========== */
+.board-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: var(--twg-ivory);
+    box-shadow: 0 10px 40px rgba(93, 64, 55, 0.2);
+}
+
+/* ========== 板块样式 ========== */
+.board-section {
+    padding: 30px;
+    border: 1px solid var(--twg-wood-light);
+    background: linear-gradient(180deg, var(--twg-wood-beige) 0%, var(--twg-wood-cream) 100%);
+    transition: all 0.4s ease;
+}
+
+.board-section:hover {
+    background: linear-gradient(180deg, var(--twg-wood-cream) 0%, #F8F0E0 100%);
+}
+
+.section-one {
+    grid-column: 1;
+    grid-row: 1;
+    border-right: 2px solid var(--twg-wood-brown);
+    border-bottom: 2px solid var(--twg-wood-brown);
+}
+
+.section-two {
+    grid-column: 2;
+    grid-row: 1;
+    border-bottom: 2px solid var(--twg-wood-brown);
+}
+
+.section-three {
+    grid-column: 1;
+    grid-row: 2;
+    border-right: 2px solid var(--twg-wood-brown);
+}
+
+.section-four {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* ========== 板块标题 ========== */
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 3px solid var(--twg-wood-brown);
+}
+
+.section-title .icon {
+    font-size: 2.2em;
+    color: var(--twg-wood-brown);
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.section-title h2 {
+    font-size: 1.7em;
+    color: var(--twg-wood-brown);
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.section-title h3 {
+    font-size: 1.1em;
+    color: var(--twg-wood-light);
+    margin: 6px 0 0 0;
+    font-weight: 400;
+}
+
+/* ========== 图片占位 ========== */
+.image-placeholder {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, var(--twg-wood-brown) 0%, var(--twg-wood-light) 100%);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-placeholder::before {
+    content: '📷';
+    font-size: 3.5rem;
+    opacity: 0.4;
+}
+
+.image-placeholder::after {
+    content: '点击更换图片';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.85em;
+    color: rgba(255,255,255,0.7);
+}
+
+/* ========== 内容框 ========== */
+.content-box {
+    background: rgba(255,255,255,0.85);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    border-left: 5px solid var(--twg-wood-light);
+    box-shadow: 0 4px 12px rgba(93, 64, 55, 0.08);
+    transition: all 0.3s ease;
+}
+
+.content-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(93, 64, 55, 0.12);
+}
+
+.content-box h4 {
+    color: var(--twg-wood-brown);
+    font-size: 1.15em;
+    margin: 0 0 12px 0;
+    font-weight: 700;
+}
+
+.content-box p {
+    color: var(--twg-wood-dark);
+    line-height: 1.9;
+    margin: 0;
+    text-align: justify;
+}
+
+.highlight-text {
+    color: var(--twg-gold-dark);
+    font-weight: bold;
+    background: rgba(218, 165, 32, 0.15);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ========== 名句展示 ========== */
+.famous-quote {
+    background: linear-gradient(135deg, var(--twg-wood-beige) 0%, #F5DEB3 100%);
+    padding: 28px 24px;
+    text-align: center;
+    font-size: 1.45em;
+    color: var(--twg-wood-brown);
+    font-style: italic;
+    border-radius: 12px;
+    margin: 24px 0;
+    border: 3px dashed var(--twg-wood-light);
+    box-shadow: 0 4px 16px rgba(93, 64, 55, 0.15);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+}
+
+/* ========== 时间线 ========== */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--twg-wood-brown) 0%, var(--twg-wood-light) 100%);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 24px;
+    padding-left: 30px;
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateX(5px);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    background: var(--twg-wood-light);
+    border-radius: 50%;
+    border: 3px solid var(--twg-wood-beige);
+    box-shadow: 0 2px 8px rgba(93, 64, 55, 0.3);
+}
+
+.timeline-item h4 {
+    color: var(--twg-wood-brown);
+    margin: 0 0 10px 0;
+    font-size: 1.15em;
+    font-weight: 700;
+}
+
+.timeline-item p {
+    color: var(--twg-wood-dark);
+    margin: 0;
+    line-height: 1.8;
+}
+
+/* ========== 数据统计 ========== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.stat-item {
+    background: rgba(139,69,19,0.08);
+    padding: 20px 15px;
+    text-align: center;
+    border-radius: 12px;
+    border: 2px solid var(--twg-wood-light);
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    background: rgba(139,69,19,0.12);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(93, 64, 55, 0.2);
+}
+
+.stat-value {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--twg-wood-brown);
+    text-shadow: 0 2px 4px rgba(93, 64, 55, 0.1);
+}
+
+.stat-label {
+    font-size: 0.95em;
+    color: var(--twg-wood-light);
+    margin-top: 6px;
+}
+
+/* ========== 特色列表 ========== */
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    padding: 12px 0 12px 35px;
+    position: relative;
+    color: var(--twg-wood-dark);
+    border-bottom: 1px dashed var(--twg-wood-light);
+    transition: all 0.2s ease;
+}
+
+.feature-list li:hover {
+    padding-left: 40px;
+}
+
+.feature-list li:last-child {
+    border-bottom: none;
+}
+
+.feature-list li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
+    color: var(--twg-wood-light);
+    font-size: 1.2em;
+}
+
+/* ========== 标签 ========== */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.tag {
+    background: linear-gradient(135deg, var(--twg-wood-brown) 0%, var(--twg-wood-light) 100%);
+    color: var(--twg-wood-beige);
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-size: 0.95em;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    box-shadow: 0 3px 10px rgba(93, 64, 55, 0.25);
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(93, 64, 55, 0.35);
+}
+
+/* ========== 引语区域 ========== */
+.quote-section {
+    background: linear-gradient(135deg, var(--twg-wood-brown) 0%, #A0522D 100%);
+    color: var(--twg-wood-beige);
+    padding: 28px 24px;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 20px rgba(93, 64, 55, 0.3);
+}
+
+.quote-section h3 {
+    font-size: 1.4em;
+    margin: 0 0 18px 0;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.quote-section p {
+    font-size: 1.15em;
+    line-height: 1.9;
+    margin: 0;
+}
+
+/* ========== 侧边小引语 ========== */
+.side-quotes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.side-quote {
+    background: rgba(139,69,19,0.1);
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 1em;
+    color: var(--twg-wood-brown);
+    text-align: center;
+    border: 2px dashed var(--twg-wood-light);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.side-quote:hover {
+    background: rgba(139,69,19,0.15);
+}
+
+/* ========== 研学小元素 ========== */
+.研学小字 {
+    background: var(--twg-wood-beige);
+    border: 2px solid var(--twg-wood-light);
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    color: var(--twg-wood-brown);
+    margin-top: 16px;
+    display: inline-block;
+    font-weight: 500;
+}
+
+.研学点睛 {
+    background: linear-gradient(90deg, var(--twg-wood-brown) 0%, var(--twg-wood-light) 100%);
+    color: var(--twg-wood-beige);
+    padding: 16px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.1em;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 12px rgba(93, 64, 55, 0.25);
+}
+
+/* ========== 页脚 ========== */
+.board-footer {
+    background: linear-gradient(135deg, var(--twg-wood-brown) 0%, var(--twg-wood-light) 100%);
+    color: var(--twg-wood-beige);
+    text-align: center;
+    padding: 24px;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 -4px 20px rgba(93, 64, 55, 0.2);
+}
+
+.board-footer p {
+    margin: 0;
+    font-size: 1.15em;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+}
+
+/* ========== 返回地图按钮 ========== */
+.location-header {
+    background: linear-gradient(135deg, var(--twg-wood-brown) 0%, var(--twg-wood-light) 100%);
+    padding: 20px 30px;
+    text-align: left;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.15);
+    color: var(--twg-wood-beige);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    border: 2px solid rgba(255,255,255,0.3);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.back-btn:hover {
+    background: rgba(255,255,255,0.25);
+    transform: translateX(-3px);
+}
+
+/* ========== 响应式适配 ========== */
+@media (max-width: 900px) {
+    .exhibition-board {
+        padding: 20px 15px;
+    }
+    
+    .board-header {
+        padding: 30px 20px;
+    }
+    
+    .board-header h1 {
+        font-size: 2.2em;
+    }
+    
+    .board-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-one, .section-two, .section-three, .section-four {
+        grid-column: 1;
+        grid-row: auto;
+        border-right: none;
+        border-bottom: 2px solid var(--twg-wood-brown);
+    }
+    
+    .section-four {
+        border-bottom: none;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .board-section {
+        padding: 24px 20px;
+    }
+    
+    .image-placeholder {
+        height: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    .exhibition-board {
+        padding: 15px 10px;
+    }
+    
+    .board-header {
+        padding: 24px 16px;
+        border-radius: 12px 12px 0 0;
+    }
+    
+    .board-header h1 {
+        font-size: 1.8em;
+    }
+    
+    .board-header .subtitle {
+        font-size: 1.05em;
+    }
+    
+    .board-section {
+        padding: 20px 16px;
+    }
+    
+    .section-title h2 {
+        font-size: 1.4em;
+    }
+    
+    .famous-quote {
+        font-size: 1.2em;
+        padding: 20px 16px;
+    }
+    
+    .stat-value {
+        font-size: 1.7em;
+    }
+}

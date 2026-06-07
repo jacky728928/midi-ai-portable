@@ -5,327 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>滕王阁研学展板 - 研学江西</title>
     <link rel="stylesheet" href="../css/style.css">
-    <style>
-        /* 展板专用样式 */
-        .exhibition-board {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .board-header {
-            text-align: center;
-            padding: 30px;
-            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
-            color: #FFF8DC;
-            border-radius: 12px 12px 0 0;
-            margin-bottom: 0;
-        }
-        
-        .board-header h1 {
-            font-size: 2.5em;
-            margin: 0 0 10px 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .board-header .subtitle {
-            font-size: 1.2em;
-            opacity: 0.95;
-        }
-        
-        .board-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
-            background: #FDF5E6;
-        }
-        
-        .board-section {
-            padding: 25px;
-            border: 1px solid #D2691E;
-            background: linear-gradient(180deg, #FFF8DC 0%, #FAEBD7 100%);
-        }
-        
-        .section-one {
-            grid-column: 1;
-            grid-row: 1;
-            border-right: 2px solid #D2691E;
-        }
-        
-        .section-two {
-            grid-column: 2;
-            grid-row: 1;
-        }
-        
-        .section-three {
-            grid-column: 1;
-            grid-row: 2;
-            border-right: 2px solid #D2691E;
-        }
-        
-        .section-four {
-            grid-column: 2;
-            grid-row: 2;
-        }
-        
-        .section-title {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            padding-bottom: 12px;
-            border-bottom: 3px solid #8B4513;
-        }
-        
-        .section-title .icon {
-            font-size: 2em;
-            color: #8B4513;
-        }
-        
-        .section-title h2 {
-            font-size: 1.6em;
-            color: #8B4513;
-            margin: 0;
-        }
-        
-        .section-title h3 {
-            font-size: 1.1em;
-            color: #A0522D;
-            margin: 5px 0 0 0;
-            font-weight: normal;
-        }
-        
-        .content-box {
-            background: rgba(255,255,255,0.7);
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            border-left: 4px solid #D2691E;
-        }
-        
-        .content-box h4 {
-            color: #8B4513;
-            font-size: 1.1em;
-            margin: 0 0 10px 0;
-        }
-        
-        .content-box p {
-            color: #5D4037;
-            line-height: 1.8;
-            margin: 0;
-            text-align: justify;
-        }
-        
-        .highlight-text {
-            color: #B8860B;
-            font-weight: bold;
-        }
-        
-        .famous-quote {
-            background: linear-gradient(135deg, #FFF8DC 0%, #F5DEB3 100%);
-            padding: 20px;
-            text-align: center;
-            font-size: 1.3em;
-            color: #8B4513;
-            font-style: italic;
-            border-radius: 8px;
-            margin: 20px 0;
-            border: 2px dashed #D2691E;
-        }
-        
-        .timeline {
-            position: relative;
-            padding-left: 20px;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(180deg, #8B4513 0%, #D2691E 100%);
-        }
-        
-        .timeline-item {
-            position: relative;
-            margin-bottom: 20px;
-            padding-left: 25px;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -5px;
-            top: 5px;
-            width: 12px;
-            height: 12px;
-            background: #D2691E;
-            border-radius: 50%;
-            border: 2px solid #FFF8DC;
-        }
-        
-        .timeline-item h4 {
-            color: #8B4513;
-            margin: 0 0 8px 0;
-            font-size: 1.05em;
-        }
-        
-        .timeline-item p {
-            color: #5D4037;
-            margin: 0;
-            line-height: 1.7;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-        
-        .stat-item {
-            background: rgba(139,69,19,0.1);
-            padding: 15px;
-            text-align: center;
-            border-radius: 8px;
-            border: 1px solid #D2691E;
-        }
-        
-        .stat-value {
-            font-size: 1.8em;
-            font-weight: bold;
-            color: #8B4513;
-        }
-        
-        .stat-label {
-            font-size: 0.9em;
-            color: #A0522D;
-        }
-        
-        .feature-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .feature-list li {
-            padding: 10px 0 10px 30px;
-            position: relative;
-            color: #5D4037;
-            border-bottom: 1px dashed #D2691E;
-        }
-        
-        .feature-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .feature-list li::before {
-            content: '◆';
-            position: absolute;
-            left: 0;
-            color: #D2691E;
-        }
-        
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
-        }
-        
-        .tag {
-            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
-            color: #FFF8DC;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-        }
-        
-        .quote-section {
-            background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
-            color: #FFF8DC;
-            padding: 25px;
-            text-align: center;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-        
-        .quote-section h3 {
-            font-size: 1.3em;
-            margin: 0 0 15px 0;
-        }
-        
-        .quote-section p {
-            font-size: 1.1em;
-            line-height: 1.8;
-            margin: 0;
-        }
-        
-        .side-quotes {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        
-        .side-quote {
-            background: rgba(139,69,19,0.1);
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-size: 0.95em;
-            color: #8B4513;
-            text-align: center;
-            border: 1px dashed #D2691E;
-        }
-        
-        .board-footer {
-            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
-            color: #FFF8DC;
-            text-align: center;
-            padding: 20px;
-            border-radius: 0 0 12px 12px;
-        }
-        
-        .研学小字 {
-            background: #FFF8DC;
-            border: 1px solid #D2691E;
-            padding: 8px 12px;
-            border-radius: 4px;
-            font-size: 0.85em;
-            color: #8B4513;
-            margin-top: 10px;
-            display: inline-block;
-        }
-        
-        .研学点睛 {
-            background: linear-gradient(90deg, #8B4513 0%, #D2691E 100%);
-            color: #FFF8DC;
-            padding: 12px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-            text-align: center;
-            margin-top: 15px;
-        }
-        
-        /* 响应式适配 */
-        @media (max-width: 900px) {
-            .board-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .section-one, .section-two, .section-three, .section-four {
-                grid-column: 1;
-                grid-row: auto;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../css/tengwangge.css">
 </head>
-<body class="location-page">
+<body class="tengwangge-page">
     <header class="location-header">
         <a href="../map.html" class="back-btn">← 返回地图</a>
     </header>
@@ -350,6 +32,9 @@
                             <h3>左侧人物区 · 对应李元婴、王勃</h3>
                         </div>
                     </div>
+                    
+                    <!-- 图片占位 -->
+                    <div class="image-placeholder"></div>
                     
                     <div class="content-box">
                         <h4>① 滕王李元婴·建阁渊源</h4>
@@ -384,7 +69,10 @@
                         </div>
                     </div>
                     
-                    <p style="color: #5D4037; margin-bottom: 20px; line-height: 1.8;">
+                    <!-- 图片占位 -->
+                    <div class="image-placeholder"></div>
+                    
+                    <p style="color: var(--twg-wood-dark); margin-bottom: 20px; line-height: 1.9; font-size: 1.05em;">
                         滕王阁自初唐始建，历经<span class="highlight-text">28次焚毁、28次重建</span>，现存楼阁为第29次复建：
                     </p>
                     
@@ -420,7 +108,10 @@
                         </div>
                     </div>
                     
-                    <p style="color: #5D4037; margin-bottom: 15px;">
+                    <!-- 图片占位 -->
+                    <div class="image-placeholder"></div>
+                    
+                    <p style="color: var(--twg-wood-dark); margin-bottom: 18px; font-size: 1.05em; line-height: 1.8;">
                         现存滕王阁为仿宋古建，研学建筑知识点：
                     </p>
                     
@@ -443,7 +134,7 @@
                         </div>
                     </div>
                     
-                    <ul class="feature-list" style="margin-top: 20px;">
+                    <ul class="feature-list" style="margin-top: 22px;">
                         <li><strong>楼层规制：</strong>明三暗七经典营造格式</li>
                         <li><strong>平面布局：</strong>底层十字构型，南北长80m、东西宽140m</li>
                         <li><strong>高台配亭：</strong>12米古城墙式基座，两翼配压江亭、挹翠亭</li>
@@ -467,6 +158,9 @@
                         </div>
                     </div>
                     
+                    <!-- 图片占位 -->
+                    <div class="image-placeholder"></div>
+                    
                     <div class="quote-section">
                         <h3>文脉积淀</h3>
                         <p>滕王阁集唐诗、古建、赣鄱民俗、书画艺术于一体，是赣文化具象载体，历代文人墨客（韩愈、张九龄等）登临题咏，诗文典籍数不胜数。</p>
@@ -475,7 +169,7 @@
                     <div class="quote-section">
                         <h3>🎓 研学寄语</h3>
                         <p>
-                            登千年名阁，读千古名篇；<br>
+                            登千年名楼，读千古名篇；<br>
                             观唐宋建筑，识赣地文脉；<br><br>
                             踏寻王勃足迹，品读序文风华，<br>
                             在一砖一瓦间读懂江西千年人文底蕴。
@@ -493,9 +187,7 @@
 
             <!-- 展板底部装饰 -->
             <div class="board-footer">
-                <p style="margin: 0; font-size: 1.1em;">
-                    🚀 研学江西 · 探索赣鄱大地文化瑰宝
-                </p>
+                <p>🚀 研学江西 · 探索赣鄱大地文化瑰宝</p>
             </div>
         </div>
     </main>
