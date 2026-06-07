@@ -5,23 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>婺女洲 - 研学江西</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/interaction.css">
 </head>
 <body class="location-page">
-    <header class="location-header">
+    <header class="location-header scroll-animate">
         <a href="../map.html" class="back-btn">← 返回地图</a>
         <h1>婺女洲</h1>
     </header>
 
     <main class="location-content">
-        <div class="location-image">
+        <div class="location-image scroll-animate delay-1">
             <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Wunvzhou%20resort%20traditional%20Huizhou%20architecture%20night%20illumination%20water%20town&image_size=landscape_16_9" alt="婺女洲">
         </div>
-        <section class="location-info">
+        <section class="location-info scroll-animate delay-2">
             <h2>关于婺女洲</h2>
-            <p>内容待补充...</p>
+            <p>婺女洲度假区坐落于江西省上饶市婺源县，是一个以徽派建筑为特色的旅游度假胜地。这里有美丽的江南水乡风光，璀璨的夜景灯光，以及丰富的文化活动。度假区内有徽派建筑群、水系景观、特色民宿、美食街等，是体验徽州文化、感受江南水乡魅力的好去处。</p>
+        </section>
+        
+        <section id="quiz-section" class="quiz-section scroll-animate delay-3">
         </section>
     </main>
 
+    <script>
+        window.quizConfig = {
+            quizData: [
+                {
+                    question: "婺女洲位于哪里？",
+                    options: ["婺源", "南昌", "九江", "景德镇"],
+                    correctAnswer: 0,
+                    explanation: "婺女洲度假区坐落于江西省上饶市婺源县。"
+                },
+                {
+                    question: "婺女洲的建筑风格主要是？",
+                    options: ["徽派建筑", "苏派建筑", "闽南建筑", "川西建筑"],
+                    correctAnswer: 0,
+                    explanation: "婺女洲以徽派建筑为特色。"
+                },
+                {
+                    question: "婺女洲是一个什么类型的地方？",
+                    options: ["工业基地", "旅游度假胜地", "农业园区", "科技园区"],
+                    correctAnswer: 1,
+                    explanation: "婺女洲是一个旅游度假胜地。"
+                }
+            ],
+            knowledgePoints: [
+                { id: "wnz1", label: "徽派建筑" },
+                { id: "wnz2", label: "江南水乡" },
+                { id: "wnz3", label: "婺源风光" },
+                { id: "wnz4", label: "徽州文化" },
+                { id: "wnz5", label: "夜景灯光" }
+            ]
+        };
+    </script>
+
     <script src="../js/main.js"></script>
+    <script src="../js/interaction.js"></script>
 </body>
 </html>

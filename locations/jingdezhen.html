@@ -5,23 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>景德镇古窑景区 - 研学江西</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/interaction.css">
 </head>
 <body class="location-page">
-    <header class="location-header">
+    <header class="location-header scroll-animate">
         <a href="../map.html" class="back-btn">← 返回地图</a>
         <h1>景德镇古窑景区</h1>
     </header>
 
     <main class="location-content">
-        <div class="location-image">
+        <div class="location-image scroll-animate delay-1">
             <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Jingdezhen%20Ancient%20Kiln%20porcelain%20making%20traditional%20craftsmanship%20pottery&image_size=landscape_16_9" alt="景德镇古窑景区">
         </div>
-        <section class="location-info">
+        <section class="location-info scroll-animate delay-2">
             <h2>关于景德镇古窑景区</h2>
-            <p>内容待补充...</p>
+            <p>景德镇古窑民俗博览区是国家级非物质文化遗产生产性保护示范基地，位于景德镇市瓷都大道古窑路1号，是国家AAAAA级旅游景区。景区内有古代制瓷作坊、世界上最古老制瓷生产作业线、清代镇窑、明代葫芦窑、元代馒头窑、宋代龙窑、风火仙师庙、瓷行等景点，向人们展示了古代瓷业建筑，明清时期景德镇手工制瓷的工艺过程以及传统名瓷精品。</p>
+        </section>
+        
+        <section id="quiz-section" class="quiz-section scroll-animate delay-3">
         </section>
     </main>
 
+    <script>
+        window.quizConfig = {
+            quizData: [
+                {
+                    question: "景德镇被誉为？",
+                    options: ["瓷都", "陶都", "茶都", "花都"],
+                    correctAnswer: 0,
+                    explanation: "景德镇被誉为瓷都，是中国著名的瓷器产地。"
+                },
+                {
+                    question: "景德镇古窑景区是国家几级旅游景区？",
+                    options: ["AAAA", "AAAAA", "AAA", "AA"],
+                    correctAnswer: 1,
+                    explanation: "景德镇古窑民俗博览区是国家AAAAA级旅游景区。"
+                },
+                {
+                    question: "景德镇古窑景区内展示的是哪个时期的制瓷工艺？",
+                    options: ["唐宋", "明清", "元代", "现代"],
+                    correctAnswer: 1,
+                    explanation: "景区向人们展示了明清时期景德镇手工制瓷的工艺过程。"
+                }
+            ],
+            knowledgePoints: [
+                { id: "jdz1", label: "瓷都景德镇" },
+                { id: "jdz2", label: "AAAAA级旅游景区" },
+                { id: "jdz3", label: "古代制瓷作坊" },
+                { id: "jdz4", label: "风火仙师庙" },
+                { id: "jdz5", label: "传统名瓷精品" }
+            ]
+        };
+    </script>
+
     <script src="../js/main.js"></script>
+    <script src="../js/interaction.js"></script>
 </body>
 </html>

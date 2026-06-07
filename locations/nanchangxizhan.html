@@ -5,23 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>南昌西站 - 研学江西</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/interaction.css">
 </head>
 <body class="location-page">
-    <header class="location-header">
+    <header class="location-header scroll-animate">
         <a href="../map.html" class="back-btn">← 返回地图</a>
         <h1>南昌西站</h1>
     </header>
 
     <main class="location-content">
-        <div class="location-image">
+        <div class="location-image scroll-animate delay-1">
             <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Nanchang%20West%20Railway%20Station%20modern%20architecture%20aerial%20view&image_size=landscape_16_9" alt="南昌西站">
         </div>
-        <section class="location-info">
+        <section class="location-info scroll-animate delay-2">
             <h2>关于南昌西站</h2>
-            <p>内容待补充...</p>
+            <p>南昌西站是南昌铁路局重要的客运站之一，位于南昌市红谷滩新区，是一座现代化的大型铁路枢纽。车站建筑设计现代美观，是南昌的重要交通枢纽和城市地标。南昌西站连接了多条高铁线路，是江西省重要的铁路交通枢纽，也是很多来江西研学旅行的游客的第一站。</p>
+        </section>
+        
+        <section id="quiz-section" class="quiz-section scroll-animate delay-3">
         </section>
     </main>
 
+    <script>
+        window.quizConfig = {
+            quizData: [
+                {
+                    question: "南昌西站位于哪里？",
+                    options: ["东湖区", "西湖区", "红谷滩新区", "青云谱区"],
+                    correctAnswer: 2,
+                    explanation: "南昌西站位于南昌市红谷滩新区。"
+                },
+                {
+                    question: "南昌西站是？",
+                    options: ["普通火车站", "机场", "铁路枢纽", "汽车站"],
+                    correctAnswer: 2,
+                    explanation: "南昌西站是一座现代化的大型铁路枢纽。"
+                },
+                {
+                    question: "南昌西站的建筑风格是？",
+                    options: ["传统中式", "现代风格", "欧式风格", "复古风格"],
+                    correctAnswer: 1,
+                    explanation: "南昌西站建筑设计现代美观，是南昌的重要城市地标。"
+                }
+            ],
+            knowledgePoints: [
+                { id: "ncx1", label: "红谷滩新区" },
+                { id: "ncx2", label: "现代化大型铁路枢纽" },
+                { id: "ncx3", label: "南昌城市地标" },
+                { id: "ncx4", label: "高铁线路" },
+                { id: "ncx5", label: "江西重要交通枢纽" }
+            ]
+        };
+    </script>
+
     <script src="../js/main.js"></script>
+    <script src="../js/interaction.js"></script>
 </body>
 </html>

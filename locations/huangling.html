@@ -5,23 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>篁岭 - 研学江西</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/interaction.css">
 </head>
 <body class="location-page">
-    <header class="location-header">
+    <header class="location-header scroll-animate">
         <a href="../map.html" class="back-btn">← 返回地图</a>
         <h1>篁岭</h1>
     </header>
 
     <main class="location-content">
-        <div class="location-image">
+        <div class="location-image scroll-animate delay-1">
             <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Huangling%20village%20sun-drying%20crops%20on%20rooftops%20autumn%20colors%20traditional%20houses&image_size=landscape_16_9" alt="篁岭">
         </div>
-        <section class="location-info">
+        <section class="location-info scroll-animate delay-2">
             <h2>关于篁岭</h2>
-            <p>内容待补充...</p>
+            <p>篁岭古村是婺源的一颗璀璨明珠，以独特的晒秋景观闻名于世。这里有着保存完好的徽派建筑，层层叠叠的梯田，以及极具特色的民俗文化。每到秋季，村民们将辣椒、菊花、稻谷等农作物晾晒在房前屋后，形成了篁岭独有的晒秋农俗景观，被誉为中国最美乡村符号。</p>
+        </section>
+        
+        <section id="quiz-section" class="quiz-section scroll-animate delay-3">
         </section>
     </main>
 
+    <script>
+        window.quizConfig = {
+            quizData: [
+                {
+                    question: "篁岭以什么独特景观闻名于世？",
+                    options: ["水乡夜景", "晒秋景观", "雪山风光", "热带雨林"],
+                    correctAnswer: 1,
+                    explanation: "篁岭以独特的晒秋景观闻名于世，每年秋季，村民们将农作物晾晒在房前屋后，形成美丽的景观。"
+                },
+                {
+                    question: "篁岭的建筑风格主要是？",
+                    options: ["徽派建筑", "苏式建筑", "闽南建筑", "川西建筑"],
+                    correctAnswer: 0,
+                    explanation: "篁岭有着保存完好的徽派建筑，是徽派建筑的典型代表。"
+                },
+                {
+                    question: "篁岭位于哪里？",
+                    options: ["婺源", "黄山", "杭州", "苏州"],
+                    correctAnswer: 0,
+                    explanation: "篁岭古村是婺源的一颗璀璨明珠，被誉为中国最美乡村符号。"
+                }
+            ],
+            knowledgePoints: [
+                { id: "hl1", label: "晒秋农俗景观" },
+                { id: "hl2", label: "徽派建筑" },
+                { id: "hl3", label: "层层叠叠的梯田" },
+                { id: "hl4", label: "中国最美乡村符号" },
+                { id: "hl5", label: "婺源篁岭" }
+            ]
+        };
+    </script>
+
     <script src="../js/main.js"></script>
+    <script src="../js/interaction.js"></script>
 </body>
 </html>

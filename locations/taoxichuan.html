@@ -5,23 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>陶溪川 - 研学江西</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/interaction.css">
 </head>
 <body class="location-page">
-    <header class="location-header">
+    <header class="location-header scroll-animate">
         <a href="../map.html" class="back-btn">← 返回地图</a>
         <h1>陶溪川</h1>
     </header>
 
     <main class="location-content">
-        <div class="location-image">
+        <div class="location-image scroll-animate delay-1">
             <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Taoxichuan%20ceramic%20art%20avenue%20modern%20art%20district%20creative%20market&image_size=landscape_16_9" alt="陶溪川">
         </div>
-        <section class="location-info">
+        <section class="location-info scroll-animate delay-2">
             <h2>关于陶溪川</h2>
-            <p>内容待补充...</p>
+            <p>陶溪川陶瓷文化创意园坐落于千年瓷都景德镇，是一个以陶瓷文化为主题的创意产业园区。园区内有创意市集、陶瓷工坊、艺术展览、休闲空间等，是景德镇陶瓷文化的新地标。在这里，您可以看到年轻艺术家的创意作品，体验手工制瓷的乐趣，感受传统与现代结合的陶瓷文化魅力。</p>
+        </section>
+        
+        <section id="quiz-section" class="quiz-section scroll-animate delay-3">
         </section>
     </main>
 
+    <script>
+        window.quizConfig = {
+            quizData: [
+                {
+                    question: "陶溪川位于哪里？",
+                    options: ["南昌", "景德镇", "九江", "上饶"],
+                    correctAnswer: 1,
+                    explanation: "陶溪川陶瓷文化创意园坐落于千年瓷都景德镇。"
+                },
+                {
+                    question: "陶溪川的主题是？",
+                    options: ["茶文化", "陶瓷文化", "丝绸文化", "竹文化"],
+                    correctAnswer: 1,
+                    explanation: "陶溪川是一个以陶瓷文化为主题的创意产业园区。"
+                },
+                {
+                    question: "在陶溪川可以体验什么？",
+                    options: ["手工制瓷", "制茶", "造纸", "木雕"],
+                    correctAnswer: 0,
+                    explanation: "在陶溪川可以体验手工制瓷的乐趣。"
+                }
+            ],
+            knowledgePoints: [
+                { id: "txc1", label: "千年瓷都景德镇" },
+                { id: "txc2", label: "陶瓷文化创意园" },
+                { id: "txc3", label: "创意市集" },
+                { id: "txc4", label: "陶瓷工坊" },
+                { id: "txc5", label: "传统与现代结合" }
+            ]
+        };
+    </script>
+
     <script src="../js/main.js"></script>
+    <script src="../js/interaction.js"></script>
 </body>
 </html>

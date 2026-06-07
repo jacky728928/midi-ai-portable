@@ -8,6 +8,7 @@
     <meta http-equiv="Expires" content="0">
     <title>海昏侯国遗址博物馆 - 研学江西</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/interaction.css">
     <style>
         .hall-card {
             background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
@@ -80,23 +81,23 @@
     </style>
 </head>
 <body class="location-page">
-    <header class="location-header">
+    <header class="location-header scroll-animate">
         <a href="../map.html" class="back-btn">← 返回地图</a>
         <h1>海昏侯国遗址博物馆</h1>
     </header>
 
     <main class="location-content">
-        <div class="location-image">
+        <div class="location-image scroll-animate delay-1">
             <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Haihunhou%20Archaeological%20Site%20Museum%20ancient%20Han%20dynasty%20grand%20building%20architecture&image_size=landscape_16_9" alt="海昏侯国遗址博物馆">
         </div>
         
         <section class="location-info">
-            <div class="page-intro">
+            <div class="page-intro scroll-animate delay-2">
                 <h3>展馆参观指南</h3>
                 <p>海昏侯国遗址博物馆是一座集文物保护、展示、研究、教育为一体的现代化遗址博物馆。以下为您介绍七个主题展厅，带您穿越时空，领略汉代文明的璀璨辉煌。</p>
             </div>
 
-            <div class="hall-card">
+            <div class="hall-card scroll-animate delay-2">
                 <span class="hall-number">第一展厅</span>
                 <h3 class="hall-title">惊现侯国</h3>
                 <div class="hall-image">
@@ -216,8 +217,51 @@
                 </div>
             </div>
         </section>
+        
+        <!-- 知识问答区 -->
+        <section id="quiz-section" class="quiz-section scroll-animate delay-5">
+        </section>
     </main>
 
+    <script>
+        window.quizConfig = {
+            quizData: [
+                {
+                    question: "海昏侯国遗址博物馆中的海昏侯指的是哪位历史人物？",
+                    options: ["刘彻", "刘贺", "刘邦", "刘备"],
+                    correctAnswer: 1,
+                    explanation: "海昏侯是刘贺，他是汉武帝之孙，曾短暂称帝，后被贬为海昏侯。"
+                },
+                {
+                    question: "海昏侯墓中出土了大量哪种珍贵文物？",
+                    options: ["瓷器", "金器", "书画", "丝绸"],
+                    correctAnswer: 1,
+                    explanation: "海昏侯墓中出土了大量金器，包括马蹄金、麟趾金、金饼等，震惊世界。"
+                },
+                {
+                    question: "海昏侯墓中出土的十余吨五铢钱主要是什么材质的？",
+                    options: ["金", "银", "铜", "铁"],
+                    correctAnswer: 2,
+                    explanation: "五铢钱是中国古代的铜币，海昏侯墓中出土的十余吨五铢钱为铜质。"
+                },
+                {
+                    question: "海昏侯墓中出土的孔子漆衣镜反映了汉代怎样的文化现象？",
+                    options: ["尊儒崇经", "佛教盛行", "道教兴起", "百家争鸣"],
+                    correctAnswer: 0,
+                    explanation: "孔子漆衣镜的出土反映了汉代尊儒崇经的文化盛况。"
+                }
+            ],
+            knowledgePoints: [
+                { id: "hh1", label: "刘贺传奇一生" },
+                { id: "hh2", label: "大量金器出土" },
+                { id: "hh3", label: "十余吨五铢钱" },
+                { id: "hh4", label: "孔子漆衣镜" },
+                { id: "hh5", label: "汉代礼乐制度" }
+            ]
+        };
+    </script>
+
     <script src="../js/main.js"></script>
+    <script src="../js/interaction.js"></script>
 </body>
 </html>

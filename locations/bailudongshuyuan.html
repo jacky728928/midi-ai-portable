@@ -5,23 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>白鹿洞书院 - 研学江西</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/interaction.css">
 </head>
 <body class="location-page">
-    <header class="location-header">
+    <header class="location-header scroll-animate">
         <a href="../map.html" class="back-btn">← 返回地图</a>
         <h1>白鹿洞书院</h1>
     </header>
 
     <main class="location-content">
-        <div class="location-image">
+        <div class="location-image scroll-animate delay-1">
             <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Bailudong%20Academy%20ancient%20Chinese%20academy%20traditional%20architecture%20bamboo%20forest&image_size=landscape_16_9" alt="白鹿洞书院">
         </div>
-        <section class="location-info">
+        <section class="location-info scroll-animate delay-2">
             <h2>关于白鹿洞书院</h2>
-            <p>内容待补充...</p>
+            <p>白鹿洞书院，位于江西省九江市庐山五老峰南麓，是中国古代四大书院之一，享有"海内第一书院"之誉。书院始建于南唐升元年间（940年），宋代理学家朱熹在此讲学，制定了著名的《白鹿洞书院揭示》，成为后世书院办学的典范。</p>
+        </section>
+        
+        <section id="quiz-section" class="quiz-section scroll-animate delay-3">
         </section>
     </main>
 
+    <script>
+        window.quizConfig = {
+            quizData: [
+                {
+                    question: "白鹿洞书院位于中国哪座名山脚下？",
+                    options: ["黄山", "庐山", "泰山", "衡山"],
+                    correctAnswer: 1,
+                    explanation: "白鹿洞书院位于江西省九江市庐山五老峰南麓。"
+                },
+                {
+                    question: "白鹿洞书院与谁关系最为密切？",
+                    options: ["王阳明", "朱熹", "程颢", "陆九渊"],
+                    correctAnswer: 1,
+                    explanation: "宋代理学家朱熹曾在此讲学，并制定了著名的《白鹿洞书院揭示》。"
+                },
+                {
+                    question: "白鹿洞书院是中国古代几大书院之一？",
+                    options: ["三大书院", "四大书院", "五大书院", "六大书院"],
+                    correctAnswer: 1,
+                    explanation: "白鹿洞书院是中国古代四大书院之一，享有'海内第一书院'之誉。"
+                }
+            ],
+            knowledgePoints: [
+                { id: "bld1", label: "海内第一书院" },
+                { id: "bld2", label: "朱熹与《白鹿洞书院揭示》" },
+                { id: "bld3", label: "庐山五老峰南麓" },
+                { id: "bld4", label: "南唐升元年间始建" },
+                { id: "bld5", label: "宋明理学的重要阵地" }
+            ]
+        };
+    </script>
+
     <script src="../js/main.js"></script>
+    <script src="../js/interaction.js"></script>
 </body>
 </html>

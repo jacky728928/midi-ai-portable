@@ -6,10 +6,11 @@
     <title>庐山西线 - 研学江西</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/lushan.css">
+    <link rel="stylesheet" href="../css/interaction.css">
 </head>
 <body class="lushan-page">
     <!-- 主视觉区域 -->
-    <section class="hero-section">
+    <section class="hero-section scroll-animate">
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <div class="hero-badge">研学江西 · 庐山篇</div>
@@ -22,7 +23,7 @@
     </section>
 
     <!-- 展板1：西线山水 -->
-    <section class="section-1">
+    <section class="section-1 scroll-animate delay-1">
         <div class="container">
             <div class="panel-header">
                 <span class="panel-tag">展板一</span>
@@ -74,7 +75,7 @@
     </section>
 
     <!-- 展板2：人文寻踪 -->
-    <section class="section-2">
+    <section class="section-2 scroll-animate delay-2">
         <div class="container">
             <div class="panel-header">
                 <span class="panel-tag">展板二</span>
@@ -153,7 +154,7 @@
     </section>
 
     <!-- 展板3：美庐记忆 -->
-    <section class="section-3">
+    <section class="section-3 scroll-animate delay-3">
         <div class="container">
             <div class="panel-header">
                 <span class="panel-tag">展板三</span>
@@ -178,6 +179,10 @@
         </div>
     </section>
 
+    <!-- 知识问答区 -->
+    <section id="quiz-section" class="quiz-section scroll-animate delay-5">
+    </section>
+
     <!-- 页脚 -->
     <footer class="footer">
         <div class="container">
@@ -186,6 +191,45 @@
         </div>
     </footer>
 
+    <script>
+        window.quizConfig = {
+            quizData: [
+                {
+                    question: "以下哪个不是庐山的景点？",
+                    options: ["如琴湖", "花径公园", "西湖", "仙人洞"],
+                    correctAnswer: 2,
+                    explanation: "西湖在杭州，不是庐山的景点。"
+                },
+                {
+                    question: "花径公园与哪位诗人有关？",
+                    options: ["李白", "杜甫", "白居易", "苏轼"],
+                    correctAnswer: 2,
+                    explanation: "花径公园与白居易有关，相传白居易曾在此题诗。"
+                },
+                {
+                    question: "美庐别墅的主要特色是？",
+                    options: ["纯中式建筑", "中西合璧", "纯西式建筑", "现代风格"],
+                    correctAnswer: 1,
+                    explanation: "美庐别墅是中西合璧的建筑风格。"
+                },
+                {
+                    question: "庐山的别称为？",
+                    options: ["匡庐", "黄山", "泰山", "衡山"],
+                    correctAnswer: 0,
+                    explanation: "庐山又称为匡庐。"
+                }
+            ],
+            knowledgePoints: [
+                { id: "ls1", label: "匡庐西线" },
+                { id: "ls2", label: "花径与白居易" },
+                { id: "ls3", label: "仙人洞" },
+                { id: "ls4", label: "美庐别墅" },
+                { id: "ls5", label: "如琴湖" }
+            ]
+        };
+    </script>
+
     <script src="../js/main.js"></script>
+    <script src="../js/interaction.js"></script>
 </body>
 </html>
